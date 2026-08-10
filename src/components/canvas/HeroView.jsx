@@ -60,33 +60,47 @@ function AIScene() {
 
   return (
     <group ref={groupRef}>
-      {/* Luces */}
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[10, 10, 5]} intensity={3} color="#00F0FF" />
-      <directionalLight position={[-8, -8, -5]} intensity={1.5} color="#7B2FFF" />
-      <pointLight position={[0, 0, 3]} intensity={2} color="#00F0FF" distance={6} />
+      {/* Luces con la paleta de Corenius */}
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[10, 10, 5]} intensity={3.5} color="#00FFFF" />
+      <directionalLight position={[-10, -10, -5]} intensity={2.5} color="#0F52BA" />
+      <pointLight position={[0, 0, 3]} intensity={2.5} color="#00FFFF" distance={8} />
 
-      {/* Núcleo IA */}
+      {/* Núcleo IA (Cyan Eléctrico #00FFFF) */}
       <mesh ref={coreRef}>
         <icosahedronGeometry args={[1, 2]} />
         <meshStandardMaterial
-          color="#00F0FF"
+          color="#00FFFF"
           wireframe
-          emissive="#00F0FF"
-          emissiveIntensity={1.2}
+          emissive="#00FFFF"
+          emissiveIntensity={1.4}
         />
       </mesh>
 
-      {/* Anillo 1 — orbital interior */}
+      {/* Anillo 1 — orbital interior (Cerulean #0090BC / Sapphire #0F52BA) */}
       <mesh ref={ring1Ref} rotation-x={Math.PI / 2}>
-        <torusGeometry args={[1.6, 0.04, 32, 120]} />
-        <meshStandardMaterial color="#ffffff" metalness={1} roughness={0.1} />
+        <torusGeometry args={[1.6, 0.045, 32, 120]} />
+        <meshStandardMaterial
+          color="#0090BC"
+          metalness={0.9}
+          roughness={0.15}
+          emissive="#0090BC"
+          emissiveIntensity={0.3}
+        />
       </mesh>
 
-      {/* Anillo 2 — orbital exterior */}
+      {/* Anillo 2 — orbital exterior (Deep Blue #0047AB con brillo #00FFFF) */}
       <mesh ref={ring2Ref} rotation-x={Math.PI / 3} rotation-y={Math.PI / 5}>
-        <torusGeometry args={[2.2, 0.025, 32, 120]} />
-        <meshStandardMaterial color="#7B2FFF" transparent opacity={0.5} emissive="#7B2FFF" emissiveIntensity={0.5} />
+        <torusGeometry args={[2.2, 0.03, 32, 120]} />
+        <meshStandardMaterial
+          color="#0047AB"
+          transparent
+          opacity={0.7}
+          metalness={0.8}
+          roughness={0.2}
+          emissive="#0F52BA"
+          emissiveIntensity={0.6}
+        />
       </mesh>
     </group>
   );

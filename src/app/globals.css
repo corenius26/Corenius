@@ -1,31 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #090A0F;
+  --background: #060913;
   --foreground: #ffffff;
-  --accent-cyan: #00F0FF;
+  --color-blue-deep: #0047AB;
+  --color-blue-sapphire: #0F52BA;
+  --color-cyan-cerulean: #0090BC;
+  --color-cyan-electric: #00FFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-cyan: var(--accent-cyan);
+  --color-blue-deep: var(--color-blue-deep);
+  --color-blue-sapphire: var(--color-blue-sapphire);
+  --color-cyan-cerulean: var(--color-cyan-cerulean);
+  --color-cyan-electric: var(--color-cyan-electric);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(circle at 50% 0%, #0c152e 0%, #060913 70%);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
-  /* NO overflow-y: hidden — el body debe scrollear para que GSAP ScrollTrigger funcione */
+  min-height: 100vh;
 }
 
-/* Utilities for glassmorphism */
+/* Corenius Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(15, 82, 186, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 71, 171, 0.2);
+}
+
+.glass-nav {
+  background: rgba(6, 9, 19, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* Gradient text utilities */
+.gradient-corenius {
+  background: linear-gradient(135deg, #00FFFF 0%, #0090BC 40%, #0F52BA 80%, #0047AB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
 }
