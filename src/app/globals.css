@@ -16,14 +16,20 @@
   --color-blue-sapphire: var(--color-blue-sapphire);
   --color-cyan-cerulean: var(--color-cyan-cerulean);
   --color-cyan-electric: var(--color-cyan-electric);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plus-jakarta);
+  --font-heading: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space-grotesk), var(--font-plus-jakarta), sans-serif;
+  letter-spacing: -0.03em;
 }
 
 body {
   background: radial-gradient(circle at 50% 0%, #0c152e 0%, #060913 70%);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-plus-jakarta), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
