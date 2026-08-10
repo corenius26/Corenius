@@ -8,50 +8,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Brand Logo & Slogan */}
-        <Link href="/" className="flex items-center gap-3.5 group">
-          {/* Logo SVG Icon */}
-          <div className="relative w-11 h-11 flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="coreniusGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#00FFFF" />
-                  <stop offset="40%" stopColor="#0090BC" />
-                  <stop offset="75%" stopColor="#0F52BA" />
-                  <stop offset="100%" stopColor="#0047AB" />
-                </linearGradient>
-                <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              {/* Outer C Curve */}
-              <path
-                d="M 50 12 C 26 12 10 28 10 50 C 10 72 26 88 50 88 C 65 88 78 79 84 66 C 81 64 74 62 68 68 C 64 72 57 76 50 76 C 35 76 22 64 22 50 C 22 36 35 24 50 24 C 62 24 72 32 75 43 C 82 41 85 36 84 32 C 77 20 65 12 50 12 Z"
-                fill="url(#coreniusGrad)"
-              />
-
-              {/* Inner Dynamic Arc */}
-              <path
-                d="M 46 28 C 34 30 25 40 25 50 C 25 60 34 70 46 72 C 38 66 35 58 35 50 C 35 42 38 34 46 28 Z"
-                fill="#00FFFF"
-                opacity="0.9"
-              />
-
-              {/* Cyan Pulse Node */}
-              <circle cx="78" cy="50" r="8" fill="#00FFFF" filter="url(#cyanGlow)" />
-            </svg>
-          </div>
-
-          {/* Typography */}
-          <div className="flex flex-col">
-            <span className="text-2xl font-black tracking-[0.18em] text-white font-sans leading-none group-hover:text-cyan-400 transition-colors">
-              CORENIUS
-            </span>
-            <span className="text-[9px] font-semibold tracking-[0.28em] text-gray-300 uppercase mt-1 leading-none">
-              INNOVACIÓN CON PROPÓSITO
-            </span>
-          </div>
+        <Link href="/" className="flex flex-col group">
+          <span className="text-2xl font-black tracking-[0.18em] text-white leading-none group-hover:text-cyan-400 transition-colors">
+            CORENIUS
+          </span>
+          <span className="text-[9px] font-semibold tracking-[0.28em] text-cyan-400 uppercase mt-1 leading-none">
+            INNOVACIÓN CON PROPÓSITO
+          </span>
         </Link>
 
         {/* Navigation Links */}
