@@ -3,10 +3,10 @@
 const founders = [
   {
     id: 1,
-    initials: "F1",
+    initials: "JB",
     role: "Co-Founder & CEO",
-    name: "Nombre Fundador 1",
-    bio: "Lidera la visión estratégica y el crecimiento de Corenius. Especialista en gestión de proyectos tecnológicos, alianzas comerciales y transformación digital de organizaciones. Convierte los desafíos del negocio en soluciones de alto impacto.",
+    name: "Juan Manuel Beltrán Botello",
+    bio: "Lidera la visión estratégica y el crecimiento de Corenius. Estudiante de Ingeniería Mecatrónica con enfoque en gestión de proyectos tecnológicos, transformación digital y construcción de alianzas comerciales. Convierte los desafíos reales del negocio en soluciones tecnológicas de alto impacto.",
     skills: ["Estrategia", "Producto", "Partnerships", "Transformación Digital"],
     gradientFrom: "#0057FF",
     gradientVia: "#007CFF",
@@ -22,10 +22,10 @@ const founders = [
   },
   {
     id: 2,
-    initials: "F2",
+    initials: "OS",
     role: "Co-Founder & CTO",
-    name: "Nombre Fundador 2",
-    bio: "Arquitecto de las soluciones tecnológicas de Corenius. Experto en inteligencia artificial, sistemas embebidos y arquitecturas de software escalables. Define y ejecuta la hoja de ruta técnica que convierte la visión en producto real.",
+    name: "Oscar Jhondairo Siabato León",
+    bio: "Arquitecto de las soluciones tecnológicas de Corenius. Estudiante de Ingeniería Mecatrónica con experiencia en sistemas embebidos, inteligencia artificial y desarrollo de software. Define y ejecuta la hoja de ruta técnica que convierte la visión en producto real y escalable.",
     skills: ["IA & ML", "Software Architecture", "Embedded Systems", "Mecatrónica"],
     gradientFrom: "#00C8F2",
     gradientVia: "#007CFF",
@@ -109,9 +109,6 @@ function FounderCard({ founder }) {
         </p>
         <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight leading-tight">
           {founder.name}
-          <span className="block text-sm font-normal text-gray-500 tracking-normal mt-0.5">
-            (Pendiente confirmar)
-          </span>
         </h3>
         <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
           {founder.bio}
