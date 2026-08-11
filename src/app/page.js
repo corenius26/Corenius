@@ -15,10 +15,10 @@ export default function Home() {
         <HeroViewWrapper />
 
         {/* Contenido HTML superpuesto — position sticky por sección */}
-        <div className="relative z-10 pt-20">
+        <div className="relative z-10">
 
           {/* Sección 1: Hero */}
-          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
+          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16 pt-20">
             <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass mb-6 border border-cyan-400/25">
                 <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* ── Sección: Misión & Visión (Propósito & Identidad) ───────────────── */}
-      <section id="nosotros" className="relative z-10 py-32 px-6 sm:px-12 lg:px-24 border-t border-cyan-500/10 bg-gradient-to-b from-transparent via-[#0A2540]/30 to-transparent">
+      <section id="nosotros" className="relative z-30 py-32 px-6 sm:px-12 lg:px-24 border-t border-cyan-500/15 bg-[#071326]">
         <div className="max-w-6xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-20">
@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* ── Sección de Proyectos ──────────────────────────────────────────────── */}
-      <section id="proyectos" className="relative z-10 py-32 px-8 md:px-16 lg:px-32 border-t border-cyan-500/10">
+      <section id="proyectos" className="relative z-30 py-32 px-8 md:px-16 lg:px-32 border-t border-cyan-500/15 bg-[#071326]">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
             Portafolio de Innovación
@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* ── Sección de Contacto / Footer ──────────────────────────────────────── */}
-      <footer id="contacto" className="relative z-10 py-20 px-8 md:px-16 lg:px-32 border-t border-cyan-500/10 glass-nav">
+      <footer id="contacto" className="relative z-30 py-20 px-8 md:px-16 lg:px-32 border-t border-cyan-500/15 bg-[#050d1a]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           <div>
