@@ -31,15 +31,15 @@ function AIScene() {
       },
     });
 
-    // Sección 1→2 (Cerebro y Máquina): Rotación dinámica y leve inclinación 3D
-    tl.to(groupRef.current.position, { x: 0.9, y: 0, z: 0.3, duration: 1 }, 0);
+    // Sección 1→2 (Cerebro y Máquina): El núcleo se traslada suavemente a la izquierda para el texto de la derecha
+    tl.to(groupRef.current.position, { x: -1.3, y: 0, z: 0.25, duration: 1 }, 0);
     tl.to(groupRef.current.rotation, { y: Math.PI * 0.75, x: 0.2, z: -0.1, duration: 1 }, 0);
     if (dataCubesGroupRef.current) {
       tl.to(dataCubesGroupRef.current.position, { x: -0.6, z: 0.4, duration: 1 }, 0);
     }
 
-    // Sección 2→3 (Ingeniería Transparente): Vista explosionada con separación de capas
-    tl.to(groupRef.current.position, { x: -0.9, y: 0.1, z: 0.4, duration: 1 }, 1);
+    // Sección 2→3 (Ingeniería Transparente): El núcleo se traslada a la derecha mientras el texto está a la izquierda
+    tl.to(groupRef.current.position, { x: 1.3, y: 0.1, z: 0.35, duration: 1 }, 1);
     tl.to(groupRef.current.rotation, { y: Math.PI * 1.6, x: -0.25, z: 0.15, duration: 1 }, 1);
     if (cArcRef.current) {
       tl.to(cArcRef.current.scale, { x: 1.2, y: 1.2, z: 1.2, duration: 1 }, 1);
@@ -98,8 +98,8 @@ function AIScene() {
   ];
 
   return (
-    // position={[0, 0, 0]} Centrado perfectamente en pantalla
-    <group ref={groupRef} scale={[0.62, 0.62, 0.62]} position={[0, 0, 0]}>
+    // position={[0.85, 0, 0]} Desplazado ligeramente a la derecha
+    <group ref={groupRef} scale={[0.62, 0.62, 0.62]} position={[0.85, 0, 0]}>
       {/* ── Iluminación Studio PBR ── */}
       <ambientLight intensity={0.65} />
       <directionalLight position={[10, 12, 8]} intensity={4.0} color="#00C2FF" />
