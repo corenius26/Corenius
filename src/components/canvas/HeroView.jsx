@@ -15,7 +15,6 @@ function AIScene() {
   const groupRef = useRef();
   const cArcRef = useRef();
   const innerCoreRef = useRef();
-  const innerLatticeRef = useRef();
   const dataCubesGroupRef = useRef();
   const ring1Ref = useRef();
   const ring2Ref = useRef();
@@ -72,10 +71,6 @@ function AIScene() {
     if (innerCoreRef.current) {
       innerCoreRef.current.rotation.y = t * 0.55;
       innerCoreRef.current.rotation.x = t * 0.28;
-    }
-    if (innerLatticeRef.current) {
-      innerLatticeRef.current.rotation.y = -t * 0.35;
-      innerLatticeRef.current.rotation.z = t * 0.2;
     }
     if (ring1Ref.current) {
       ring1Ref.current.rotation.z = -t * 0.25;
@@ -144,31 +139,29 @@ function AIScene() {
         </mesh>
       </group>
 
-      {/* ── Núcleo Cuántico Central: Cristal Multifacético con Holograma ── */}
+      {/* ── Núcleo Cuántico Central: Esfera de Cristal Puro y Luminoso (Sin Malla) ── */}
       <group ref={innerCoreRef}>
-        {/* Cristal interior sólido con refracción */}
+        {/* Esfera de cristal líquido / cuarzo cuántico de alta resolución */}
         <mesh>
-          <icosahedronGeometry args={[0.52, 1]} />
+          <sphereGeometry args={[0.58, 64, 64]} />
           <meshPhysicalMaterial
             color="#00C2FF"
-            metalness={0.3}
-            roughness={0.1}
-            transmission={0.8}
-            thickness={0.5}
+            metalness={0.15}
+            roughness={0.05}
+            transmission={0.88}
+            thickness={0.8}
+            ior={1.52}
+            clearcoat={1.0}
+            clearcoatRoughness={0.04}
             emissive="#0066FF"
-            emissiveIntensity={0.7}
+            emissiveIntensity={0.65}
           />
         </mesh>
 
-        {/* Enrejado holográfico externo */}
-        <mesh ref={innerLatticeRef}>
-          <icosahedronGeometry args={[0.62, 2]} />
-          <meshStandardMaterial
-            color="#00C2FF"
-            wireframe
-            emissive="#00C2FF"
-            emissiveIntensity={1.8}
-          />
+        {/* Núcleo interno emisor de pulso */}
+        <mesh scale={[0.55, 0.55, 0.55]}>
+          <sphereGeometry args={[0.5, 32, 32]} />
+          <meshBasicMaterial color="#00C2FF" />
         </mesh>
       </group>
 
