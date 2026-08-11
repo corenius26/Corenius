@@ -1,151 +1,162 @@
-import HeroViewWrapper from "@/components/canvas/HeroViewWrapper";
-import Navbar from "@/components/Navbar";
-import CoreniusLogo from "@/components/CoreniusLogo";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import HeroViewWrapper from "@/components/canvas/HeroViewWrapper";
+import CoreniusLogo from "@/components/CoreniusLogo";
 
 export default function Home() {
   return (
-    <div className="relative text-foreground selection:bg-cyan-500/30">
-      {/* Barra de Navegación Oficial */}
+    <div className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[#00C8F2] selection:text-[#071A45]">
+      {/* ── Barra de Navegación Oficial ────────────────────────────────────────── */}
       <Navbar />
 
-      {/* ── Zona con el portal 3D (GSAP ScrollTrigger) ─────────────────────────── */}
-      <section id="ia-mecatronica" className="hero-section relative h-[400vh]">
-        {/* El View portal: sticky que sigue el viewport mientras scrolleas */}
-        <HeroViewWrapper />
-
-        {/* Contenido HTML superpuesto — position sticky por sección */}
-        <div className="relative z-10">
-
-          {/* Sección 1: Hero */}
-          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16 pt-20">
-            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass mb-6 border border-cyan-400/25">
-                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
-                  Transformación Digital
-                </span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
-                Software &amp; Mecatrónica <br />
-                <span className="gradient-corenius">
-                  Impulsados por IA
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-lg font-light leading-relaxed">
-                Tecnología que entiende tu negocio y potencia su crecimiento. Diseñamos e implementamos soluciones tecnológicas a la medida integrando sistemas empresariales, inteligencia artificial y automatización física.
-              </p>
-
-              {/* Pilares de Marca */}
-              <div className="flex items-center gap-3 text-xs font-mono text-cyan-300/80 mb-8 tracking-widest uppercase">
-                <span>Innovación</span>
-                <span className="text-blue-500">•</span>
-                <span>Inteligencia</span>
-                <span className="text-blue-500">•</span>
-                <span>Crecimiento</span>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="#proyectos"
-                  className="px-8 py-3.5 rounded-full text-sm font-bold tracking-wide text-white transition-all duration-300 hover:scale-105"
-                  style={{
-                    background: "linear-gradient(135deg, #00C2FF 0%, #0066FF 100%)",
-                    boxShadow: "0 0 30px rgba(0, 102, 255, 0.45)",
-                  }}
-                >
-                  Explorar Proyectos
-                </Link>
-                <Link
-                  href="#servicios"
-                  className="px-8 py-3.5 rounded-full text-sm font-semibold border border-cyan-500/30 text-white hover:bg-cyan-500/10 transition-all hover:border-cyan-400"
-                >
-                  Nuestras Capacidades
-                </Link>
-              </div>
+      {/* ── SECCIÓN 1: HERO PRINCIPAL CON NÚCLEO 3D EN DERECHA ────────────────── */}
+      <section className="relative min-h-screen flex items-center pt-28 pb-16 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
+          
+          {/* Columna Izquierda: Información & Titulares */}
+          <div className="lg:col-span-7 z-10">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass mb-6 border border-[#00C8F2]/30">
+              <span className="w-2 h-2 rounded-full bg-[#00C8F2] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C8F2] font-semibold">
+                Transformación Digital
+              </span>
             </div>
 
-            {/* Espacio reservado para el Núcleo 3D en Desktop */}
-            <div className="hidden lg:block w-[45%] pointer-events-none" />
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
+              Software &amp; Mecatrónica <br />
+              <span className="gradient-corenius">
+                Impulsados por IA
+              </span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-xl font-light leading-relaxed">
+              <strong className="font-semibold text-white">Tecnología que entiende tu negocio y potencia su crecimiento.</strong> Diseñamos e implementamos soluciones tecnológicas personalizadas integrando sistemas empresariales, inteligencia artificial y automatización para transformar procesos y facilitar el crecimiento sostenible.
+            </p>
+
+            {/* Pilares Oficiales de Marca */}
+            <div className="flex items-center gap-3 text-xs font-mono text-cyan-300/80 mb-8 tracking-widest uppercase">
+              <span>Innovación</span>
+              <span className="text-blue-500">•</span>
+              <span>Inteligencia</span>
+              <span className="text-blue-500">•</span>
+              <span>Crecimiento</span>
+            </div>
+
+            {/* Botones de Acción */}
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="#proyectos"
+                className="px-8 py-3.5 rounded-full text-sm font-bold tracking-wide text-white transition-all duration-300 hover:scale-105"
+                style={{
+                  background: "linear-gradient(135deg, #00C8F2 0%, #0057FF 100%)",
+                  boxShadow: "0 0 30px rgba(0, 87, 255, 0.45)",
+                }}
+              >
+                Explorar Proyectos
+              </Link>
+              <Link
+                href="#servicios"
+                className="px-8 py-3.5 rounded-full text-sm font-semibold border border-[#00C8F2]/30 text-white hover:bg-[#00C8F2]/10 transition-all hover:border-[#00C8F2]"
+              >
+                Nuestras Capacidades
+              </Link>
+            </div>
           </div>
 
-          {/* Sección 2: Cerebro y Máquina */}
-          <div id="servicios" className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
-            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
-                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
-                  Sincronización Total
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6">
-                Cerebro y Máquina
-              </h2>
-              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
-                Integramos algoritmos de machine learning directamente con actuadores físicos y arquitecturas en la nube. Procesamiento en el borde con toma de decisiones en microsegundos y telemetría predictiva continua.
-              </p>
+          {/* Columna Derecha: Escenario 3D Dedicado (Sin interferir con el texto) */}
+          <div className="lg:col-span-5 h-[420px] sm:h-[500px] lg:h-[580px] w-full relative flex items-center justify-center">
+            {/* Halo de luz de fondo */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0057FF]/20 via-[#00C8F2]/15 to-transparent rounded-full blur-3xl pointer-events-none" />
+            
+            {/* Contenedor del View 3D de Drei */}
+            <div className="w-full h-full relative z-10">
+              <HeroViewWrapper />
             </div>
-            <div className="hidden lg:block w-[45%] pointer-events-none" />
-          </div>
-
-          {/* Sección 3: Ingeniería Transparente */}
-          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
-            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
-                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
-                  Arquitectura Robusta
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6">
-                Ingeniería Transparente
-              </h2>
-              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
-                Diseccionamos cada componente. Desde los modelos de visión artificial y redes neuronales hasta los sistemas embebidos y hardware a medida. Sin cajas negras, con máxima trazabilidad.
-              </p>
-            </div>
-            <div className="hidden lg:block w-[45%] pointer-events-none" />
-          </div>
-
-          {/* Sección 4: Escala */}
-          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
-            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
-                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
-                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
-                  Escalabilidad Industrial
-                </span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6 gradient-corenius">
-                Construido para Escalar
-              </h2>
-              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
-                Llevamos tus ideas desde el primer prototipo funcional en laboratorio hasta la producción industrial a escala con la mayor seguridad y rendimiento.
-              </p>
-            </div>
-            <div className="hidden lg:block w-[45%] pointer-events-none" />
           </div>
 
         </div>
       </section>
 
-      {/* ── Sección: Misión & Visión (Propósito & Identidad) ───────────────── */}
-      <section id="nosotros" className="relative z-30 py-32 px-6 sm:px-12 lg:px-24 border-t border-cyan-500/15 bg-[#071326]">
+      {/* ── SECCIÓN 2: SERVICIOS & CAPACIDADES TECNOLÓGICAS ───────────────────── */}
+      <section id="servicios" className="relative z-10 py-28 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto border-t border-cyan-500/15">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs uppercase tracking-[0.3em] text-[#00C8F2] font-semibold">
+            Capacidades de Alto Nivel
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mt-3 mb-4">
+            Ingeniería que Transforma Organizaciones
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg">
+            Integramos software empresarial, procesamiento inteligente y sistemas electromecánicos a medida.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card 1 */}
+          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/30 flex items-center justify-center text-2xl mb-6">
+              🤖
+            </div>
+            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider">
+              Mecatrónica &amp; Edge AI
+            </span>
+            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+              Sincronización Total
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed font-light">
+              Acoplamos algoritmos de machine learning directamente con actuadores físicos, microcontroladores y sensores en tiempo real para decisiones en microsegundos.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#0057FF]/15 border border-[#0057FF]/40 flex items-center justify-center text-2xl mb-6">
+              ⚙️
+            </div>
+            <span className="text-[11px] font-mono text-cyan-300 uppercase tracking-wider">
+              Arquitectura Robusta
+            </span>
+            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+              Ingeniería Transparente
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed font-light">
+              Desde modelos de visión artificial hasta hardware industrial dedicado. Diseñamos con modularidad estricta y trazabilidad sin cajas negras.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/30 flex items-center justify-center text-2xl mb-6">
+              📈
+            </div>
+            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider">
+              Despliegue &amp; Escala
+            </span>
+            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+              Construido para Escalar
+            </h3>
+            <p className="text-sm text-gray-300 leading-relaxed font-light">
+              Llevamos tu visión desde el primer prototipo funcional en laboratorio hasta la producción y operación industrial continua con la máxima confiabilidad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECCIÓN 3: MISIÓN & VISIÓN (NOSOTROS) ─────────────────────────────── */}
+      <section id="nosotros" className="relative z-10 py-28 px-6 sm:px-12 lg:px-16 border-t border-cyan-500/15 bg-[#071A45]/20">
         <div className="max-w-6xl mx-auto">
           
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
-              <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
-              <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#00C8F2] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C8F2] font-semibold">
                 Propósito &amp; Identidad
               </span>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mt-2 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mt-2 mb-4">
               Impulsando el Futuro de las Organizaciones
             </h2>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
               Guiados por la ingeniería de precisión y la inteligencia digital para crear un impacto sostenible y escalable.
             </p>
           </div>
@@ -153,15 +164,15 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             
             {/* Tarjeta: Misión */}
-            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-cyan-500/20 hover:border-[#00C2FF]/60 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,194,255,0.18)] hover:-translate-y-1">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00C2FF]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#00C2FF]/20 transition-all" />
+            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,200,242,0.18)] hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00C8F2]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#00C8F2]/20 transition-all" />
               
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#00C2FF]/15 text-[#00C2FF] border border-[#00C2FF]/30">
+                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#00C8F2]/15 text-[#00C8F2] border border-[#00C8F2]/30">
                     Misión
                   </span>
-                  <div className="w-10 h-10 rounded-2xl bg-[#00C2FF]/10 border border-[#00C2FF]/25 flex items-center justify-center text-[#00C2FF] font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/25 flex items-center justify-center text-[#00C8F2] font-bold text-lg group-hover:scale-110 transition-transform">
                     🎯
                   </div>
                 </div>
@@ -183,15 +194,15 @@ export default function Home() {
             </div>
 
             {/* Tarjeta: Visión */}
-            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-blue-500/20 hover:border-[#0066FF]/70 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,102,255,0.22)] hover:-translate-y-1">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0066FF]/15 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0066FF]/25 transition-all" />
+            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-blue-500/20 hover:border-[#0057FF]/70 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,87,255,0.22)] hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0057FF]/15 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0057FF]/25 transition-all" />
 
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#0066FF]/20 text-cyan-300 border border-[#0066FF]/40">
+                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#0057FF]/20 text-cyan-300 border border-[#0057FF]/40">
                     Visión
                   </span>
-                  <div className="w-10 h-10 rounded-2xl bg-[#0066FF]/15 border border-[#0066FF]/35 flex items-center justify-center text-cyan-300 font-bold text-lg group-hover:scale-110 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-[#0057FF]/15 border border-[#0057FF]/35 flex items-center justify-center text-cyan-300 font-bold text-lg group-hover:scale-110 transition-transform">
                     🚀
                   </div>
                 </div>
@@ -215,9 +226,9 @@ export default function Home() {
           </div>
 
           {/* Pilares Oficiales */}
-          <div className="mt-14 p-6 rounded-2xl glass border border-white/5 flex flex-col md:flex-row items-center justify-around gap-6 text-center">
+          <div className="mt-12 p-6 rounded-2xl glass border border-white/5 flex flex-col md:flex-row items-center justify-around gap-6 text-center">
             <div className="flex items-center gap-3">
-              <span className="text-xl text-[#00C2FF]">⚡</span>
+              <span className="text-xl text-[#00C8F2]">⚡</span>
               <div className="text-left">
                 <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 01</p>
                 <p className="text-base font-bold text-white">Innovación Constante</p>
@@ -225,7 +236,7 @@ export default function Home() {
             </div>
             <div className="hidden md:block w-px h-10 bg-white/10" />
             <div className="flex items-center gap-3">
-              <span className="text-xl text-[#00C2FF]">🧠</span>
+              <span className="text-xl text-[#00C8F2]">🧠</span>
               <div className="text-left">
                 <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 02</p>
                 <p className="text-base font-bold text-white">Inteligencia Aplicada</p>
@@ -233,7 +244,7 @@ export default function Home() {
             </div>
             <div className="hidden md:block w-px h-10 bg-white/10" />
             <div className="flex items-center gap-3">
-              <span className="text-xl text-[#00C2FF]">📈</span>
+              <span className="text-xl text-[#00C8F2]">📈</span>
               <div className="text-left">
                 <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 03</p>
                 <p className="text-base font-bold text-white">Crecimiento Sostenible</p>
@@ -244,21 +255,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Sección de Proyectos ──────────────────────────────────────────────── */}
-      <section id="proyectos" className="relative z-30 py-32 px-8 md:px-16 lg:px-32 border-t border-cyan-500/15 bg-[#071326]">
+      {/* ── SECCIÓN 4: PROYECTOS DESTACADOS ──────────────────────────────────── */}
+      <section id="proyectos" className="relative z-10 py-28 px-6 sm:px-12 lg:px-16 max-w-7xl mx-auto border-t border-cyan-500/15">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-[#00C8F2] font-semibold">
             Portafolio de Innovación
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mt-3 mb-4">
             Proyectos Destacados
           </h2>
-          <p className="text-gray-400 text-lg">
+          <p className="text-gray-400 text-base sm:text-lg">
             Sistemas inteligentes, plataformas digitales e ingeniería mecatrónica desarrollada para la transformación digital.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               title: "Visión Artificial & Robótica",
@@ -278,21 +289,21 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item.title}
-              className="h-80 glass rounded-3xl p-7 flex flex-col justify-between hover:bg-[#0A2540]/40 transition-all duration-300 cursor-pointer border border-cyan-500/20 group hover:border-[#00C2FF]/70 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(0,194,255,0.2)]"
+              className="glass rounded-3xl p-8 flex flex-col justify-between hover:bg-[#071A45]/40 transition-all duration-300 cursor-pointer border border-cyan-500/20 group hover:border-[#00C8F2]/70 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(0,200,242,0.2)]"
             >
               <div>
-                <span className="text-[11px] text-[#00C2FF] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#0A2540]/80 border border-cyan-500/30">
+                <span className="text-[11px] text-[#00C8F2] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#071A45]/80 border border-cyan-500/30">
                   {item.tag}
                 </span>
-                <h3 className="text-2xl font-bold mt-5 mb-2 group-hover:text-[#00C2FF] transition-colors">
+                <h3 className="text-2xl font-bold mt-5 mb-3 group-hover:text-[#00C8F2] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">
+                <p className="text-sm text-gray-400 leading-relaxed font-light mb-6">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="flex items-center text-sm font-semibold text-[#00C2FF] group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center text-sm font-semibold text-[#00C8F2] group-hover:translate-x-2 transition-transform">
                 Ver demostración interactiva <span className="ml-1.5">→</span>
               </div>
             </div>
@@ -300,14 +311,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Sección de Contacto / Footer ──────────────────────────────────────── */}
-      <footer id="contacto" className="relative z-30 py-20 px-8 md:px-16 lg:px-32 border-t border-cyan-500/15 bg-[#050d1a]">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      {/* ── FOOTER & CONTACTO ─────────────────────────────────────────────────── */}
+      <footer id="contacto" className="relative z-10 py-20 px-6 sm:px-12 lg:px-16 border-t border-cyan-500/15 bg-[#050d1a]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           <div>
             <CoreniusLogo size="large" />
-            <p className="text-sm text-gray-400 mt-4 max-w-md">
-              Ingeniería mecatrónica y desarrollo de software con inteligencia artificial para la transformación digital.
+            <p className="text-sm text-gray-400 mt-4 max-w-md font-light">
+              Ingeniería mecatrónica y desarrollo de software con inteligencia artificial para la transformación digital de organizaciones.
             </p>
           </div>
 
@@ -316,8 +327,8 @@ export default function Home() {
               href="mailto:contacto@corenius.com"
               className="px-8 py-3.5 rounded-full text-xs uppercase font-bold tracking-widest text-white transition-all hover:scale-105"
               style={{
-                background: "linear-gradient(135deg, #00C2FF 0%, #0066FF 100%)",
-                boxShadow: "0 0 25px rgba(0, 102, 255, 0.4)",
+                background: "linear-gradient(135deg, #00C8F2 0%, #0057FF 100%)",
+                boxShadow: "0 0 25px rgba(0, 87, 255, 0.4)",
               }}
             >
               Hablemos de tu Proyecto
@@ -326,7 +337,7 @@ export default function Home() {
 
         </div>
 
-        <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <span>© {new Date().getFullYear()} Corenius. Todos los derechos reservados.</span>
           <span className="tracking-widest font-mono text-cyan-400/70">
             INNOVACIÓN · INTELIGENCIA · CRECIMIENTO

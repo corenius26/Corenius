@@ -2,16 +2,11 @@
 
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { View, Float, Environment, ContactShadows } from "@react-three/drei";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { View, Float, ContactShadows } from "@react-three/drei";
+import * as THREE from "three";
 
-// ← MÓDULO SCOPE: registrar plugins una sola vez
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-// ── Escena 3D de Alta Fidelidad del Núcleo Corenius ─────────────────
-function AIScene() {
+// ── Núcleo 3D de Corenius: Isotipo 'C' + Esfera Cuántica + Datos IA ──
+function CoreniusCyberCore() {
   const groupRef = useRef();
   const cArcRef = useRef();
   const innerCoreRef = useRef();
@@ -19,85 +14,47 @@ function AIScene() {
   const ring1Ref = useRef();
   const ring2Ref = useRef();
 
-  useGSAP(() => {
-    if (!groupRef.current) return;
+  // Matriz de cubos de dispersión oficial (Datos / IA del isotipo)
+  const dataCubes = [
+    { pos: [-1.25, 0.18, 0.15], size: 0.14, color: "#00C8F2" },
+    { pos: [-1.05, 0.52, -0.15], size: 0.11, color: "#0057FF" },
+    { pos: [-1.15, -0.42, 0.2], size: 0.12, color: "#00C8F2" },
+    { pos: [-1.45, -0.18, -0.08], size: 0.09, color: "#007CFF" },
+    { pos: [-0.9, 0.72, 0.08], size: 0.08, color: "#00C8F2" },
+    { pos: [-0.85, -0.62, -0.15], size: 0.10, color: "#0057FF" },
+    { pos: [-1.6, 0.25, 0.02], size: 0.07, color: "#00C8F2" },
+  ];
 
-    // Posición inicial fija y segura en la columna derecha
-    gsap.set(groupRef.current.position, { x: 2.5, y: 0, z: 0 });
-    gsap.set(groupRef.current.rotation, { y: 0, x: 0, z: 0 });
+  // Interacción fluida con el cursor del usuario y rotación continua
+  useFrame((state, delta) => {
+    const t = state.clock.getElapsedTime();
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero-section",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1.2,
-      },
-    });
-
-    // Fase 1: Rotación 3D fluida y apertura de capas mecánicas (en su lugar derecho)
-    tl.to(
-      groupRef.current.rotation,
-      { y: Math.PI * 1.2, x: 0.25, z: -0.15, duration: 1 },
-      0
-    );
-    if (dataCubesGroupRef.current) {
-      tl.to(dataCubesGroupRef.current.position, { x: -0.8, z: 0.5, duration: 1 }, 0);
+    if (groupRef.current) {
+      const targetRotY = t * 0.45 + state.pointer.x * 0.5;
+      const targetRotX = state.pointer.y * 0.35 + Math.sin(t * 0.8) * 0.05;
+      groupRef.current.rotation.y = THREE.MathUtils.damp(
+        groupRef.current.rotation.y,
+        targetRotY,
+        2.5,
+        delta
+      );
+      groupRef.current.rotation.x = THREE.MathUtils.damp(
+        groupRef.current.rotation.x,
+        targetRotX,
+        2.5,
+        delta
+      );
     }
+
     if (innerCoreRef.current) {
-      tl.to(innerCoreRef.current.position, { z: 0.9, duration: 1 }, 0);
-    }
-
-    // Fase 2: Vista explosionada completa - Desacople del arco C y anillos orbitales
-    tl.to(
-      groupRef.current.rotation,
-      { y: Math.PI * 2.4, x: -0.2, z: 0.2, duration: 1 },
-      1
-    );
-    if (cArcRef.current) {
-      tl.to(cArcRef.current.scale, { x: 1.25, y: 1.25, z: 1.25, duration: 1 }, 1);
+      innerCoreRef.current.rotation.y = -t * 0.6;
+      innerCoreRef.current.rotation.x = t * 0.3;
     }
     if (ring1Ref.current) {
-      tl.to(ring1Ref.current.rotation, { x: Math.PI * 1.5, z: Math.PI * 0.5, duration: 1 }, 1);
+      ring1Ref.current.rotation.z = -t * 0.3;
     }
     if (ring2Ref.current) {
-      tl.to(ring2Ref.current.rotation, { y: Math.PI * 1.8, duration: 1 }, 1);
-    }
-
-    // Fase 3: Re-ensamble armónico y retroceso en profundidad antes de Nosotros
-    tl.to(
-      groupRef.current.position,
-      { x: 2.5, y: 0.2, z: -1.5, duration: 1 },
-      2
-    );
-    tl.to(
-      groupRef.current.rotation,
-      { y: Math.PI * 3.5, x: 0, z: 0, duration: 1 },
-      2
-    );
-    if (cArcRef.current) {
-      tl.to(cArcRef.current.scale, { x: 1, y: 1, z: 1, duration: 1 }, 2);
-    }
-    if (innerCoreRef.current) {
-      tl.to(innerCoreRef.current.position, { z: 0, duration: 1 }, 2);
-    }
-    if (dataCubesGroupRef.current) {
-      tl.to(dataCubesGroupRef.current.position, { x: 0, z: 0, duration: 1 }, 2);
-    }
-  });
-
-  // Animación idle continua ultra fluida
-  useFrame(({ clock }) => {
-    const t = clock.getElapsedTime();
-    if (innerCoreRef.current) {
-      innerCoreRef.current.rotation.y = t * 0.55;
-      innerCoreRef.current.rotation.x = t * 0.28;
-    }
-    if (ring1Ref.current) {
-      ring1Ref.current.rotation.z = -t * 0.25;
-    }
-    if (ring2Ref.current) {
-      ring2Ref.current.rotation.z = t * 0.18;
+      ring2Ref.current.rotation.z = t * 0.22;
     }
     if (dataCubesGroupRef.current) {
       dataCubesGroupRef.current.children.forEach((cube, i) => {
@@ -107,66 +64,53 @@ function AIScene() {
     }
   });
 
-  // Matriz de cubos de dispersión de alta definición (Datos / IA)
-  const dataCubes = [
-    { pos: [-1.25, 0.18, 0.15], size: 0.13, color: "#00C2FF" },
-    { pos: [-1.05, 0.52, -0.15], size: 0.10, color: "#0066FF" },
-    { pos: [-1.15, -0.42, 0.2], size: 0.11, color: "#00C2FF" },
-    { pos: [-1.45, -0.18, -0.08], size: 0.08, color: "#0066FF" },
-    { pos: [-0.9, 0.72, 0.08], size: 0.07, color: "#00C2FF" },
-    { pos: [-0.85, -0.62, -0.15], size: 0.09, color: "#0066FF" },
-    { pos: [-1.6, 0.25, 0.02], size: 0.06, color: "#00C2FF" },
-  ];
-
   return (
-    // position={[2.6, 0, 0]} Ubicado en el centro del espacio derecho libre (sin tapar texto)
-    <group ref={groupRef} scale={[0.55, 0.55, 0.55]} position={[2.6, 0, 0]}>
-      {/* ── Iluminación Studio PBR ── */}
-      <ambientLight intensity={0.65} />
-      <directionalLight position={[10, 12, 8]} intensity={4.0} color="#00C2FF" />
-      <directionalLight position={[-10, -10, -6]} intensity={3.5} color="#0066FF" />
-      <pointLight position={[0, 0, 3.5]} intensity={3.0} color="#00C2FF" distance={10} />
-      <pointLight position={[0, -2, -2]} intensity={2.0} color="#0A2540" distance={8} />
+    <group ref={groupRef} scale={[0.82, 0.82, 0.82]} position={[0, 0, 0]}>
+      {/* ── Iluminación Studio con la Paleta Oficial de Corenius ── */}
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[10, 12, 8]} intensity={3.8} color="#00C8F2" />
+      <directionalLight position={[-10, -10, -6]} intensity={3.2} color="#0057FF" />
+      <pointLight position={[0, 0, 3.5]} intensity={2.8} color="#00C8F2" distance={8} />
+      <pointLight position={[0, -2, -2]} intensity={2.0} color="#071A45" distance={8} />
 
       {/* ── Isotipo 3D: Arco 'C' Principal de Corenius ── */}
       <group ref={cArcRef} rotation={[0, 0, Math.PI * 0.2]}>
-        {/* Arco exterior principal (Azul Eléctrico #0066FF con acabado metálico automotriz) */}
+        {/* Arco exterior principal (Azul Eléctrico #0057FF) */}
         <mesh rotation={[0, 0, Math.PI * 0.1]}>
           <torusGeometry args={[1.4, 0.24, 64, 160, Math.PI * 1.55]} />
           <meshPhysicalMaterial
-            color="#0066FF"
+            color="#0057FF"
             metalness={0.9}
             roughness={0.12}
             clearcoat={1.0}
             clearcoatRoughness={0.08}
             reflectivity={0.95}
-            emissive="#002D80"
-            emissiveIntensity={0.35}
+            emissive="#071A45"
+            emissiveIntensity={0.4}
           />
         </mesh>
 
-        {/* Cinta interna luminosa (Azul Cian #00C2FF reflectivo de alta gama) */}
+        {/* Cinta interna luminosa (Cian #00C8F2) */}
         <mesh rotation={[0, 0, Math.PI * 0.25]} scale={[0.88, 0.88, 0.88]}>
           <torusGeometry args={[1.4, 0.12, 48, 140, Math.PI * 1.45]} />
           <meshPhysicalMaterial
-            color="#00C2FF"
+            color="#00C8F2"
             metalness={0.92}
             roughness={0.08}
             clearcoat={1.0}
             clearcoatRoughness={0.05}
-            emissive="#00C2FF"
-            emissiveIntensity={0.9}
+            emissive="#00C8F2"
+            emissiveIntensity={0.85}
           />
         </mesh>
       </group>
 
-      {/* ── Núcleo Cuántico Central: Esfera de Cristal Puro y Luminoso (Sin Malla) ── */}
+      {/* ── Núcleo Cuántico Central: Esfera de Cristal Puro ── */}
       <group ref={innerCoreRef}>
-        {/* Esfera de cristal líquido / cuarzo cuántico de alta resolución */}
         <mesh>
           <sphereGeometry args={[0.58, 64, 64]} />
           <meshPhysicalMaterial
-            color="#00C2FF"
+            color="#00C8F2"
             metalness={0.15}
             roughness={0.05}
             transmission={0.88}
@@ -174,26 +118,24 @@ function AIScene() {
             ior={1.52}
             clearcoat={1.0}
             clearcoatRoughness={0.04}
-            emissive="#0066FF"
+            emissive="#0057FF"
             emissiveIntensity={0.65}
           />
         </mesh>
-
-        {/* Núcleo interno emisor de pulso */}
         <mesh scale={[0.55, 0.55, 0.55]}>
           <sphereGeometry args={[0.5, 32, 32]} />
-          <meshBasicMaterial color="#00C2FF" />
+          <meshBasicMaterial color="#00C8F2" />
         </mesh>
       </group>
 
-      {/* ── Anillos de Circuitos & Telemetría Orbital ── */}
+      {/* ── Anillos de Circuitos Orbitales ── */}
       <mesh ref={ring1Ref} rotation-x={Math.PI / 2.3}>
         <torusGeometry args={[1.75, 0.016, 24, 160]} />
         <meshPhysicalMaterial
-          color="#00C2FF"
+          color="#00C8F2"
           metalness={1.0}
           roughness={0.1}
-          emissive="#00C2FF"
+          emissive="#00C8F2"
           emissiveIntensity={0.8}
         />
       </mesh>
@@ -201,11 +143,11 @@ function AIScene() {
       <mesh ref={ring2Ref} rotation-x={Math.PI / 3.2} rotation-y={Math.PI / 5}>
         <torusGeometry args={[2.05, 0.01, 24, 160]} />
         <meshPhysicalMaterial
-          color="#0066FF"
+          color="#0057FF"
           transparent
           opacity={0.45}
           metalness={0.8}
-          emissive="#0066FF"
+          emissive="#0057FF"
           emissiveIntensity={0.5}
         />
       </mesh>
@@ -227,28 +169,19 @@ function AIScene() {
         ))}
       </group>
 
-      {/* Sombra de contacto suave para asentar el objeto */}
-      <ContactShadows position={[0, -2.2, 0]} opacity={0.35} scale={8} blur={2.5} far={4} color="#00C2FF" />
+      {/* Sombra de contacto suave */}
+      <ContactShadows position={[0, -2.0, 0]} opacity={0.45} scale={7} blur={2.2} far={4} color="#00C8F2" />
     </group>
   );
 }
 
-// ── View Portal: conecta la escena 3D a la sección HTML ────────────
+// ── View Portal acoplado directamente al contenedor HTML del Hero ────
 export default function HeroView() {
   return (
-    <View
-      className="
-        pointer-events-none
-        sticky top-0 left-0
-        -mt-[100vh]
-        h-screen w-screen
-        z-30
-      "
-    >
-      <Float speed={1.8} rotationIntensity={0.4} floatIntensity={0.35}>
-        <AIScene />
+    <View className="w-full h-full pointer-events-none">
+      <Float speed={1.8} rotationIntensity={0.25} floatIntensity={0.35}>
+        <CoreniusCyberCore />
       </Float>
-      <Environment preset="city" />
     </View>
   );
 }
