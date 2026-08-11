@@ -18,8 +18,8 @@ export default function Home() {
         <div className="relative z-10 pt-20">
 
           {/* Sección 1: Hero */}
-          <div className="h-screen flex items-center justify-start px-8 md:px-16 lg:px-32">
-            <div className="max-w-2xl">
+          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
+            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass mb-6 border border-cyan-400/25">
                 <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
                 <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
@@ -27,14 +27,14 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7.5xl font-black tracking-tight mb-6 leading-[1.05]">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
                 Software &amp; Mecatrónica <br />
                 <span className="gradient-corenius">
                   Impulsados por IA
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-lg font-light leading-relaxed">
                 Diseñamos y construimos sistemas inteligentes de alta precisión donde los datos, la inteligencia artificial y la ingeniería física convergen.
               </p>
 
@@ -66,6 +66,9 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+
+            {/* Espacio reservado para el Núcleo 3D en Desktop */}
+            <div className="hidden lg:block w-[45%] pointer-events-none" />
           </div>
 
           {/* Sección 2: Cerebro y Máquina */}
