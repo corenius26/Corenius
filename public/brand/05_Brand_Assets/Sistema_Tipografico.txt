@@ -1,0 +1,10 @@
+CORONIUS — SISTEMA TIPOGRÁFICO v1.0
+
+Principal: Montserrat
+Titulares: Bold / SemiBold
+Subtítulos: Medium / SemiBold
+Texto: Regular
+Etiquetas: Medium + tracking positivo
+
+Apoyo digital: Inter
+Uso: interfaces, dashboards y documentación digital.

@@ -1,0 +1,32 @@
+CORONIUS — PALETA OFICIAL v1.0
+
+Azul Eléctrico
+HEX: #0057FF
+RGB: 0, 87, 255
+CMYK aprox.: 100, 66, 0, 0
+
+Azul Profundo
+HEX: #071A45
+RGB: 7, 26, 69
+CMYK aprox.: 90, 62, 0, 73
+
+Azul Tecnológico
+HEX: #007CFF
+RGB: 0, 124, 255
+CMYK aprox.: 100, 51, 0, 0
+
+Cian
+HEX: #00C8F2
+RGB: 0, 200, 242
+CMYK aprox.: 100, 17, 0, 5
+
+Gris Oscuro
+HEX: #20252B
+RGB: 32, 37, 43
+CMYK aprox.: 26, 14, 0, 83
+
+Blanco
+HEX: #FFFFFF
+RGB: 255, 255, 255
+CMYK aprox.: 0, 0, 0, 0
+

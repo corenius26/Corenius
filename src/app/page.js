@@ -35,7 +35,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-lg font-light leading-relaxed">
-                Diseñamos y construimos sistemas inteligentes de alta precisión donde los datos, la inteligencia artificial y la ingeniería física convergen.
+                Tecnología que entiende tu negocio y potencia su crecimiento. Diseñamos e implementamos soluciones tecnológicas a la medida integrando sistemas empresariales, inteligencia artificial y automatización física.
               </p>
 
               {/* Pilares de Marca */}
