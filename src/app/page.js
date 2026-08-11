@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroViewWrapper from "@/components/canvas/HeroViewWrapper";
 import CoreniusLogo from "@/components/CoreniusLogo";
 import TeamGrid from "@/components/TeamGrid";
+import ProjectsGrid from "@/components/ProjectsGrid";
 
 export default function Home() {
   return (
@@ -270,46 +271,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Visión Artificial & Robótica",
-              tag: "Computer Vision · Edge AI",
-              desc: "Inspección autónoma y clasificación en tiempo real con modelos de redes neuronales convolucionales.",
-            },
-            {
-              title: "Automatización & Telemetría IoT",
-              tag: "Mecatrónica · Supabase",
-              desc: "Monitoreo predictivo y control distribuido de actuadores con sincronización cloud en tiempo real.",
-            },
-            {
-              title: "Plataformas SaaS de Alto Rendimiento",
-              tag: "Fullstack · IA Generativa",
-              desc: "Arquitecturas cloud escalables con pipelines inteligentes y microservicios de alto desempeño.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="glass rounded-3xl p-8 flex flex-col justify-between hover:bg-[#071A45]/40 transition-all duration-300 cursor-pointer border border-cyan-500/20 group hover:border-[#00C8F2]/70 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(0,200,242,0.2)]"
-            >
-              <div>
-                <span className="text-[11px] text-[#00C8F2] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#071A45]/80 border border-cyan-500/30">
-                  {item.tag}
-                </span>
-                <h3 className="text-2xl font-bold mt-5 mb-3 group-hover:text-[#00C8F2] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed font-light mb-6">
-                  {item.desc}
-                </p>
-              </div>
-
-              <div className="flex items-center text-sm font-semibold text-[#00C8F2] group-hover:translate-x-2 transition-transform">
-                Ver demostración interactiva <span className="ml-1.5">→</span>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ProjectsGrid />
       </section>
 
       {/* ── SECCIÓN: EQUIPO — THE MINDS BEHIND CORENIUS ───────────────────────── */}
