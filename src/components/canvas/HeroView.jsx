@@ -22,6 +22,10 @@ function AIScene() {
   useGSAP(() => {
     if (!groupRef.current) return;
 
+    // Asegurar posición inicial limpia en el lado derecho (espacio libre sin texto)
+    gsap.set(groupRef.current.position, { x: 2.1, y: 0, z: 0 });
+    gsap.set(groupRef.current.rotation, { y: 0, x: 0, z: 0 });
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".hero-section",
@@ -31,18 +35,18 @@ function AIScene() {
       },
     });
 
-    // Sección 1→2 (Cerebro y Máquina): El núcleo se traslada suavemente a la izquierda para el texto de la derecha
-    tl.to(groupRef.current.position, { x: -1.3, y: 0, z: 0.25, duration: 1 }, 0);
-    tl.to(groupRef.current.rotation, { y: Math.PI * 0.75, x: 0.2, z: -0.1, duration: 1 }, 0);
+    // Sección 1→2 (Cerebro y Máquina - Texto en la DERECHA): El núcleo se desplaza a la IZQUIERDA
+    tl.to(groupRef.current.position, { x: -2.1, y: 0, z: 0.2, duration: 1 }, 0);
+    tl.to(groupRef.current.rotation, { y: Math.PI * 0.85, x: 0.2, z: -0.1, duration: 1 }, 0);
     if (dataCubesGroupRef.current) {
-      tl.to(dataCubesGroupRef.current.position, { x: -0.6, z: 0.4, duration: 1 }, 0);
+      tl.to(dataCubesGroupRef.current.position, { x: -0.5, z: 0.3, duration: 1 }, 0);
     }
 
-    // Sección 2→3 (Ingeniería Transparente): El núcleo se traslada a la derecha mientras el texto está a la izquierda
-    tl.to(groupRef.current.position, { x: 1.3, y: 0.1, z: 0.35, duration: 1 }, 1);
-    tl.to(groupRef.current.rotation, { y: Math.PI * 1.6, x: -0.25, z: 0.15, duration: 1 }, 1);
+    // Sección 2→3 (Ingeniería Transparente - Texto en la IZQUIERDA): El núcleo se desplaza a la DERECHA
+    tl.to(groupRef.current.position, { x: 2.1, y: 0.1, z: 0.35, duration: 1 }, 1);
+    tl.to(groupRef.current.rotation, { y: Math.PI * 1.7, x: -0.25, z: 0.15, duration: 1 }, 1);
     if (cArcRef.current) {
-      tl.to(cArcRef.current.scale, { x: 1.2, y: 1.2, z: 1.2, duration: 1 }, 1);
+      tl.to(cArcRef.current.scale, { x: 1.15, y: 1.15, z: 1.15, duration: 1 }, 1);
     }
     if (innerCoreRef.current) {
       tl.to(innerCoreRef.current.position, { z: 0.8, duration: 1 }, 1);
@@ -54,8 +58,8 @@ function AIScene() {
       tl.to(ring2Ref.current.rotation, { y: Math.PI * 0.9, duration: 1 }, 1);
     }
 
-    // Sección 3→4 (Construido para el Futuro): Re-ensamble centrado majestuoso
-    tl.to(groupRef.current.position, { x: 0, y: 0.3, z: 0.2, duration: 1 }, 2);
+    // Sección 3→4 (Construido para el Futuro - Texto CENTRADO): Re-ensamble centrado arriba
+    tl.to(groupRef.current.position, { x: 0, y: 0.8, z: 0.2, duration: 1 }, 2);
     tl.to(groupRef.current.rotation, { y: Math.PI * 2.5, x: 0.1, z: 0, duration: 1 }, 2);
     if (cArcRef.current) {
       tl.to(cArcRef.current.scale, { x: 1, y: 1, z: 1, duration: 1 }, 2);
@@ -98,8 +102,8 @@ function AIScene() {
   ];
 
   return (
-    // position={[0.85, 0, 0]} Desplazado ligeramente a la derecha
-    <group ref={groupRef} scale={[0.62, 0.62, 0.62]} position={[0.85, 0, 0]}>
+    // position={[2.1, 0, 0]} Ubicado en el centro del espacio derecho libre (sin tapar texto)
+    <group ref={groupRef} scale={[0.62, 0.62, 0.62]} position={[2.1, 0, 0]}>
       {/* ── Iluminación Studio PBR ── */}
       <ambientLight intensity={0.65} />
       <directionalLight position={[10, 12, 8]} intensity={4.0} color="#00C2FF" />
