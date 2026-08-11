@@ -24,9 +24,9 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.1]">
-              Software &amp; Mecatrónica <br />
+              Soluciones Tecnológicas <br />
               <span className="gradient-corenius">
-                Impulsados por IA
+                Inteligentes &amp; Escalables
               </span>
             </h1>
 
@@ -379,7 +379,7 @@ export default function Home() {
           <div>
             <CoreniusLogo size="large" />
             <p className="text-sm text-gray-400 mt-4 max-w-md font-light">
-              Ingeniería mecatrónica y desarrollo de software con inteligencia artificial para la transformación digital de organizaciones.
+              Soluciones tecnológicas personalizadas, inteligencia artificial y automatización para transformar procesos y potenciar el crecimiento sostenible de las organizaciones.
             </p>
           </div>
 
