@@ -343,11 +343,21 @@ export default function Home() {
             <p className="text-sm text-gray-400 mt-4 max-w-md font-light">
               Soluciones tecnológicas personalizadas, inteligencia artificial y automatización para transformar procesos y potenciar el crecimiento sostenible de las organizaciones.
             </p>
+            <div className="mt-6 flex flex-col gap-3">
+              <a href="mailto:Corenius26@gmail.com" className="flex items-center gap-3 text-sm text-gray-300 hover:text-[#00C8F2] transition-colors w-fit">
+                <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#00C8F2]">✉</span> 
+                Corenius26@gmail.com
+              </a>
+              <a href="tel:+573133730496" className="flex items-center gap-3 text-sm text-gray-300 hover:text-[#00C8F2] transition-colors w-fit">
+                <span className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#00C8F2]">📞</span> 
+                +57 3133730496
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="mailto:contacto@corenius.com"
+              href="mailto:Corenius26@gmail.com"
               className="px-8 py-3.5 rounded-full text-xs uppercase font-bold tracking-widest text-white transition-all hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #00C8F2 0%, #0057FF 100%)",
