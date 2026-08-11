@@ -17,9 +17,13 @@ export default function ViewCanvas() {
         pointerEvents: "none",
         zIndex: 30,
       }}
-      camera={{ fov: 45, near: 0.1, far: 100 }}
-      dpr={[1, 1.5]}
-      gl={{ antialias: true }}
+      camera={{ fov: 40, near: 0.1, far: 100, position: [0, 0, 7.5] }}
+      dpr={[1, 2]}
+      gl={{
+        antialias: true,
+        alpha: true,
+        powerPreference: "high-performance",
+      }}
     >
       <Suspense fallback={null}>
         <View.Port />
