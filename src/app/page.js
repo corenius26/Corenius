@@ -311,6 +311,226 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SECCIÓN: EQUIPO — THE MINDS BEHIND CORENIUS ───────────────────────── */}
+      <section id="equipo" className="relative z-10 py-28 px-6 sm:px-12 lg:px-16 border-t border-cyan-500/15 overflow-hidden">
+        {/* Orbs de luz ambientales de fondo */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div
+            className="absolute w-[500px] h-[500px] rounded-full left-[-10%] top-[20%] opacity-30"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,87,255,0.25) 0%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+          />
+          <div
+            className="absolute w-[500px] h-[500px] rounded-full right-[-10%] top-[20%] opacity-25"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(0,200,242,0.2) 0%, transparent 70%)",
+              filter: "blur(60px)",
+            }}
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          {/* Header de sección */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
+              <span className="w-2 h-2 rounded-full bg-[#00C8F2] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C8F2] font-semibold font-mono">
+                Equipo Fundador
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mt-2 mb-4">
+              Las mentes detrás de{" "}
+              <span className="gradient-corenius">Corenius</span>
+            </h2>
+            <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+              Construido por dos. Diseñado para transformar organizaciones.
+            </p>
+          </div>
+
+          {/* Grid de 2 Co-Founders */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+            {/* ── Founder 1: CEO ── */}
+            <div
+              className="group relative rounded-3xl p-8 sm:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(0,200,242,0.15)",
+                boxShadow: "0 0 0 rgba(0,87,255,0)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 50px rgba(0,87,255,0.18), 0 0 100px rgba(0,87,255,0.08), inset 0 1px 0 rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(0,200,242,0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 0 rgba(0,87,255,0)";
+                e.currentTarget.style.borderColor = "rgba(0,200,242,0.15)";
+              }}
+            >
+              {/* Gradient border animado en hover via pseudo via inline overlay */}
+              <div className="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(135deg, rgba(0,87,255,0.12) 0%, rgba(0,200,242,0.06) 100%)",
+                  borderRadius: "inherit",
+                }} />
+
+              {/* Avatar Placeholder con Iniciales */}
+              <div className="relative mb-8 flex items-start justify-between">
+                <div
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center text-3xl sm:text-4xl font-black text-white select-none transition-transform duration-300 group-hover:scale-105"
+                  style={{
+                    background: "linear-gradient(135deg, #0057FF 0%, #007CFF 50%, #00C8F2 100%)",
+                    boxShadow: "0 8px 32px rgba(0,87,255,0.4)",
+                  }}
+                >
+                  {/* Espacio para foto — iniciales temporales */}
+                  <span className="opacity-90">F1</span>
+                  {/* Glow ring en hover */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ boxShadow: "0 0 0 3px rgba(0,200,242,0.5)" }} />
+                </div>
+
+                {/* Badge de LinkedIn — aparece en hover */}
+                <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="w-9 h-9 rounded-xl bg-[#0A66C2]/20 border border-[#0A66C2]/40 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2]/30 transition-colors"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Info del Founder */}
+              <div className="flex-1">
+                <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-[#00C8F2] mb-2">
+                  Co-Founder &amp; CEO
+                </p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
+                  Nombre Fundador 1
+                  <span className="block text-sm font-normal text-gray-500 tracking-normal mt-0.5">(Pendiente confirmar)</span>
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
+                  Lidera la visión estratégica y el crecimiento de Corenius. Especialista en gestión de proyectos tecnológicos, alianzas comerciales y transformación digital de organizaciones. Convierte los desafíos del negocio en soluciones de alto impacto.
+                </p>
+              </div>
+
+              {/* Área de expertise */}
+              <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                {["Estrategia", "Producto", "Partnerships", "Transformación Digital"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-lg text-[11px] font-mono text-cyan-300/80 bg-white/[0.04] border border-white/[0.06]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Founder 2: CTO ── */}
+            <div
+              className="group relative rounded-3xl p-8 sm:p-10 flex flex-col transition-all duration-500 hover:-translate-y-2"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
+                border: "1px solid rgba(0,87,255,0.15)",
+                boxShadow: "0 0 0 rgba(0,200,242,0)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow =
+                  "0 0 50px rgba(0,200,242,0.15), 0 0 100px rgba(0,200,242,0.07), inset 0 1px 0 rgba(255,255,255,0.08)";
+                e.currentTarget.style.borderColor = "rgba(0,87,255,0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = "0 0 0 rgba(0,200,242,0)";
+                e.currentTarget.style.borderColor = "rgba(0,87,255,0.15)";
+              }}
+            >
+              <div className="absolute inset-0 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(135deg, rgba(0,200,242,0.08) 0%, rgba(0,87,255,0.08) 100%)",
+                  borderRadius: "inherit",
+                }} />
+
+              {/* Avatar Placeholder con Iniciales */}
+              <div className="relative mb-8 flex items-start justify-between">
+                <div
+                  className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl flex items-center justify-center text-3xl sm:text-4xl font-black text-white select-none transition-transform duration-300 group-hover:scale-105"
+                  style={{
+                    background: "linear-gradient(135deg, #00C8F2 0%, #007CFF 50%, #0057FF 100%)",
+                    boxShadow: "0 8px 32px rgba(0,200,242,0.35)",
+                  }}
+                >
+                  <span className="opacity-90">F2</span>
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ boxShadow: "0 0 0 3px rgba(0,87,255,0.5)" }} />
+                </div>
+
+                <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="w-9 h-9 rounded-xl bg-[#0A66C2]/20 border border-[#0A66C2]/40 flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2]/30 transition-colors"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              {/* Info del Founder */}
+              <div className="flex-1">
+                <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-[#00C8F2] mb-2">
+                  Co-Founder &amp; CTO
+                </p>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight">
+                  Nombre Fundador 2
+                  <span className="block text-sm font-normal text-gray-500 tracking-normal mt-0.5">(Pendiente confirmar)</span>
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
+                  Arquitecto de las soluciones tecnológicas de Corenius. Experto en inteligencia artificial, sistemas embebidos y arquitecturas de software escalables. Define y ejecuta la hoja de ruta técnica que convierte la visión en producto real.
+                </p>
+              </div>
+
+              {/* Área de expertise */}
+              <div className="mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                {["IA & ML", "Software Architecture", "Embedded Systems", "Mecatrónica"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 rounded-lg text-[11px] font-mono text-cyan-300/80 bg-white/[0.04] border border-white/[0.06]">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* Stat row abajo */}
+          <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-8 text-center">
+            {[
+              { value: "2", label: "Co-Founders" },
+              { value: "100%", label: "Enfoque en el cliente" },
+              { value: "∞", label: "Compromiso con la innovación" },
+            ].map((stat) => (
+              <div key={stat.label} className="glass rounded-2xl py-5 px-4 border border-white/5">
+                <p className="text-2xl sm:text-3xl font-black gradient-corenius mb-1">{stat.value}</p>
+                <p className="text-xs text-gray-400 font-mono">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       {/* ── FOOTER & CONTACTO ─────────────────────────────────────────────────── */}
       <footer id="contacto" className="relative z-10 py-20 px-6 sm:px-12 lg:px-16 border-t border-cyan-500/15 bg-[#050d1a]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">

@@ -24,6 +24,9 @@ export default function Navbar() {
           <Link href="#nosotros" className="hover:text-cyan-400 transition-colors">
             Nosotros
           </Link>
+          <Link href="#equipo" className="hover:text-cyan-400 transition-colors">
+            Equipo
+          </Link>
           <Link href="#proyectos" className="hover:text-cyan-400 transition-colors">
             Proyectos
           </Link>
