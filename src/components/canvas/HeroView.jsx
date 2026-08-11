@@ -22,8 +22,8 @@ function AIScene() {
   useGSAP(() => {
     if (!groupRef.current) return;
 
-    // Asegurar posición inicial limpia en el lado derecho (espacio libre sin texto)
-    gsap.set(groupRef.current.position, { x: 2.6, y: 0, z: 0 });
+    // Posición inicial fija y segura en la columna derecha
+    gsap.set(groupRef.current.position, { x: 2.5, y: 0, z: 0 });
     gsap.set(groupRef.current.rotation, { y: 0, x: 0, z: 0 });
 
     const tl = gsap.timeline({
@@ -31,41 +31,58 @@ function AIScene() {
         trigger: ".hero-section",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1.5,
+        scrub: 1.2,
       },
     });
 
-    // Sección 1→2 (Cerebro y Máquina - Texto en la DERECHA): El núcleo se desplaza a la IZQUIERDA
-    tl.to(groupRef.current.position, { x: -2.6, y: 0, z: 0.2, duration: 1 }, 0);
-    tl.to(groupRef.current.rotation, { y: Math.PI * 0.85, x: 0.2, z: -0.1, duration: 1 }, 0);
+    // Fase 1: Rotación 3D fluida y apertura de capas mecánicas (en su lugar derecho)
+    tl.to(
+      groupRef.current.rotation,
+      { y: Math.PI * 1.2, x: 0.25, z: -0.15, duration: 1 },
+      0
+    );
     if (dataCubesGroupRef.current) {
-      tl.to(dataCubesGroupRef.current.position, { x: -0.5, z: 0.3, duration: 1 }, 0);
-    }
-
-    // Sección 2→3 (Ingeniería Transparente - Texto en la IZQUIERDA): El núcleo se desplaza a la DERECHA
-    tl.to(groupRef.current.position, { x: 2.6, y: 0.1, z: 0.35, duration: 1 }, 1);
-    tl.to(groupRef.current.rotation, { y: Math.PI * 1.7, x: -0.25, z: 0.15, duration: 1 }, 1);
-    if (cArcRef.current) {
-      tl.to(cArcRef.current.scale, { x: 1.15, y: 1.15, z: 1.15, duration: 1 }, 1);
+      tl.to(dataCubesGroupRef.current.position, { x: -0.8, z: 0.5, duration: 1 }, 0);
     }
     if (innerCoreRef.current) {
-      tl.to(innerCoreRef.current.position, { z: 0.8, duration: 1 }, 1);
-    }
-    if (ring1Ref.current) {
-      tl.to(ring1Ref.current.rotation, { x: Math.PI * 0.85, duration: 1 }, 1);
-    }
-    if (ring2Ref.current) {
-      tl.to(ring2Ref.current.rotation, { y: Math.PI * 0.9, duration: 1 }, 1);
+      tl.to(innerCoreRef.current.position, { z: 0.9, duration: 1 }, 0);
     }
 
-    // Sección 3→4 (Construido para el Futuro - Texto CENTRADO): Re-ensamble centrado arriba
-    tl.to(groupRef.current.position, { x: 0, y: 0.7, z: 0.2, duration: 1 }, 2);
-    tl.to(groupRef.current.rotation, { y: Math.PI * 2.5, x: 0.1, z: 0, duration: 1 }, 2);
+    // Fase 2: Vista explosionada completa - Desacople del arco C y anillos orbitales
+    tl.to(
+      groupRef.current.rotation,
+      { y: Math.PI * 2.4, x: -0.2, z: 0.2, duration: 1 },
+      1
+    );
+    if (cArcRef.current) {
+      tl.to(cArcRef.current.scale, { x: 1.25, y: 1.25, z: 1.25, duration: 1 }, 1);
+    }
+    if (ring1Ref.current) {
+      tl.to(ring1Ref.current.rotation, { x: Math.PI * 1.5, z: Math.PI * 0.5, duration: 1 }, 1);
+    }
+    if (ring2Ref.current) {
+      tl.to(ring2Ref.current.rotation, { y: Math.PI * 1.8, duration: 1 }, 1);
+    }
+
+    // Fase 3: Re-ensamble armónico y retroceso en profundidad antes de Nosotros
+    tl.to(
+      groupRef.current.position,
+      { x: 2.5, y: 0.2, z: -1.5, duration: 1 },
+      2
+    );
+    tl.to(
+      groupRef.current.rotation,
+      { y: Math.PI * 3.5, x: 0, z: 0, duration: 1 },
+      2
+    );
     if (cArcRef.current) {
       tl.to(cArcRef.current.scale, { x: 1, y: 1, z: 1, duration: 1 }, 2);
     }
     if (innerCoreRef.current) {
       tl.to(innerCoreRef.current.position, { z: 0, duration: 1 }, 2);
+    }
+    if (dataCubesGroupRef.current) {
+      tl.to(dataCubesGroupRef.current.position, { x: 0, z: 0, duration: 1 }, 2);
     }
   });
 

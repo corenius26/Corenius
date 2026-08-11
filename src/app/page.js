@@ -72,45 +72,60 @@ export default function Home() {
           </div>
 
           {/* Sección 2: Cerebro y Máquina */}
-          <div id="servicios" className="h-screen flex items-center justify-end px-8 md:px-16 lg:px-32">
-            <div className="max-w-lg text-right">
-              <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
-                Sincronización Total
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+          <div id="servicios" className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
+            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
+                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
+                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+                  Sincronización Total
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6">
                 Cerebro y Máquina
               </h2>
-              <p className="text-base md:text-lg text-gray-300 glass p-8 rounded-3xl shadow-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
                 Integramos algoritmos de machine learning directamente con actuadores físicos y arquitecturas en la nube. Procesamiento en el borde con toma de decisiones en microsegundos y telemetría predictiva continua.
               </p>
             </div>
+            <div className="hidden lg:block w-[45%] pointer-events-none" />
           </div>
 
           {/* Sección 3: Ingeniería Transparente */}
-          <div className="h-screen flex items-center justify-start px-8 md:px-16 lg:px-32">
-            <div className="max-w-lg">
-              <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
-                Arquitectura Robusta
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
+            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
+                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
+                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+                  Arquitectura Robusta
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6">
                 Ingeniería Transparente
               </h2>
-              <p className="text-base md:text-lg text-gray-300 glass p-8 rounded-3xl shadow-2xl leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
                 Diseccionamos cada componente. Desde los modelos de visión artificial y redes neuronales hasta los sistemas embebidos y hardware a medida. Sin cajas negras, con máxima trazabilidad.
               </p>
             </div>
+            <div className="hidden lg:block w-[45%] pointer-events-none" />
           </div>
 
           {/* Sección 4: Escala */}
-          <div className="h-screen flex items-center justify-center px-8 md:px-16 lg:px-32">
-            <div className="text-center max-w-2xl glass p-10 rounded-3xl border border-cyan-500/30">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-corenius">
-                Construido para el Futuro
+          <div className="h-screen max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-12 lg:px-16">
+            <div className="w-full lg:w-[55%] z-20 pr-0 lg:pr-8">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
+                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
+                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+                  Escalabilidad Industrial
+                </span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-2 mb-6 gradient-corenius">
+                Construido para Escalar
               </h2>
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-300 glass p-8 sm:p-10 rounded-3xl shadow-2xl leading-relaxed border border-cyan-500/20">
                 Llevamos tus ideas desde el primer prototipo funcional en laboratorio hasta la producción industrial a escala con la mayor seguridad y rendimiento.
               </p>
             </div>
+            <div className="hidden lg:block w-[45%] pointer-events-none" />
           </div>
 
         </div>
