@@ -21,111 +21,111 @@ export default function LiaterDemoModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-8">
-      {/* Backdrop con Blur */}
+      {/* Backdrop con Blur - Mantiene el aura del main site pero más oscuro */}
       <div 
-        className="absolute inset-0 bg-[#050D1A]/80 backdrop-blur-md transition-opacity duration-300"
+        className="absolute inset-0 bg-[#050D1A]/90 backdrop-blur-md transition-opacity duration-300"
         onClick={onClose}
       />
 
-      {/* Modal Container */}
+      {/* Modal Container - LIATER Colors: #14213D (Navy) and #FCA311 (Gold) */}
       <div 
-        className="relative w-full max-w-5xl h-[80vh] min-h-[600px] flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(0,87,255,0.2)] animate-in fade-in zoom-in-95 duration-300"
+        className="relative w-full max-w-5xl h-[80vh] min-h-[600px] flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(252,163,17,0.15)] animate-in fade-in zoom-in-95 duration-300"
         style={{
-          background: "rgba(10, 20, 40, 0.95)",
-          border: "1px solid rgba(0, 200, 242, 0.2)",
+          background: "#e2e8f0", // bg-color from LIATER
+          border: "1px solid rgba(252, 163, 17, 0.4)",
         }}
       >
         {/* Botón Cerrar */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors border border-white/10"
+          className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full flex items-center justify-center bg-black/10 hover:bg-black/20 text-gray-700 hover:text-black transition-colors border border-black/10"
         >
           ✕
         </button>
 
-        {/* --- Sidebar Simulado --- */}
-        <div className="hidden md:flex w-64 flex-col bg-[#050D1A]/50 border-r border-white/5 p-6">
+        {/* --- Sidebar Simulado (LIATER Navy #14213D) --- */}
+        <div className="hidden md:flex w-64 flex-col border-r border-black/5 p-6" style={{ backgroundColor: "#14213D" }}>
           <div className="flex items-center gap-3 mb-10">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0057FF] to-[#00C8F2] flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-[#14213D] font-bold text-lg" style={{ backgroundColor: "#FCA311" }}>
               L
             </div>
             <span className="text-white font-bold tracking-widest uppercase text-sm">Liater LMS</span>
           </div>
 
           <div className="space-y-2">
-            <div className="text-xs uppercase tracking-widest text-gray-500 mb-4 font-mono">Diplomado Activo</div>
-            <button className="w-full text-left px-4 py-3 rounded-xl bg-white/5 text-white text-sm font-medium border border-white/10 transition-colors">
+            <div className="text-xs uppercase tracking-widest mb-4 font-mono" style={{ color: "rgba(255,255,255,0.55)" }}>Diplomado Activo</div>
+            <button className="w-full text-left px-4 py-3 rounded-xl text-white text-sm font-medium border transition-colors" style={{ backgroundColor: "rgba(252,163,17,0.15)", borderColor: "rgba(255,255,255,0.08)" }}>
               📊 Panel Principal
             </button>
-            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-gray-400 text-sm font-medium transition-colors">
+            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
               📚 Módulos y Clases
             </button>
-            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-gray-400 text-sm font-medium transition-colors">
+            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
               👥 Participantes
             </button>
-            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-gray-400 text-sm font-medium transition-colors">
+            <button className="w-full text-left px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium transition-colors" style={{ color: "rgba(255,255,255,0.55)" }}>
               ⚙️ Configuración
             </button>
           </div>
 
-          <div className="mt-auto pt-6 border-t border-white/5">
+          <div className="mt-auto pt-6 border-t" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-cyan-900/50 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">
+              <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: "rgba(252,163,17,0.2)", border: "1px solid rgba(252,163,17,0.5)", color: "#FCA311" }}>
                 AD
               </div>
               <div>
                 <p className="text-sm text-white font-medium">Administrador</p>
-                <p className="text-xs text-cyan-400">Corenius Staff</p>
+                <p className="text-xs" style={{ color: "#FCA311" }}>Corenius Staff</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* --- Contenido Principal Simulado --- */}
-        <div className="flex-1 flex flex-col p-6 sm:p-10 overflow-y-auto">
+        {/* --- Contenido Principal Simulado (LIATER Light Background) --- */}
+        <div className="flex-1 flex flex-col p-6 sm:p-10 overflow-y-auto" style={{ backgroundColor: "#e2e8f0" }}>
           
           {/* Header */}
           <div className="mb-8">
-            <span className="px-3 py-1 text-xs rounded-full bg-[#0057FF]/20 text-[#00C8F2] border border-[#0057FF]/30 font-mono uppercase">
+            <span className="px-3 py-1 text-xs rounded-full font-mono uppercase" style={{ backgroundColor: "rgba(20,33,61,0.10)", color: "#14213D" }}>
               Módulo 3: Inteligencia Artificial
             </span>
-            <h2 className="text-3xl font-bold text-white mt-4">Redes Neuronales Convolucionales</h2>
-            <p className="text-gray-400 mt-2">Clase 4 • Impartida por el Dr. Alan Turing</p>
+            <h2 className="text-3xl font-bold mt-4" style={{ color: "#000000" }}>Redes Neuronales Convolucionales</h2>
+            <p className="mt-2" style={{ color: "#6b7280" }}>Clase 4 • Impartida por el Dr. Alan Turing</p>
           </div>
 
           {/* Video Placeholder */}
-          <div className="relative w-full aspect-video rounded-2xl bg-black/50 border border-white/10 overflow-hidden group mb-8 flex items-center justify-center">
+          <div className="relative w-full aspect-video rounded-2xl bg-black/90 border border-black/10 overflow-hidden group mb-8 flex items-center justify-center shadow-sm">
             {/* Animación de fondo sutil */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0057FF]/20 to-transparent opacity-50" />
+            <div className="absolute inset-0 opacity-40" style={{ background: "radial-gradient(circle at center, rgba(252,163,17,0.3) 0%, transparent 70%)" }} />
             
-            <button className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-[#0057FF]/40 transition-all duration-300 z-10">
+            <button className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-[#FCA311]/80 transition-all duration-300 z-10">
               <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-white border-b-[10px] border-b-transparent ml-2" />
             </button>
 
             {/* Barra de progreso falsa */}
-            <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/10">
-              <div className="h-full bg-[#00C8F2] w-1/3" />
+            <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-white/20">
+              <div className="h-full w-1/3" style={{ backgroundColor: "#FCA311" }} />
             </div>
           </div>
 
           {/* Tabs Nav */}
-          <div className="flex gap-6 border-b border-white/10 mb-6">
+          <div className="flex gap-6 border-b border-black/10 mb-6">
             <button 
               onClick={() => setActiveTab("clase")}
-              className={`pb-3 text-sm font-medium transition-colors relative ${activeTab === 'clase' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
+              className={`pb-3 text-sm font-medium transition-colors relative ${activeTab === 'clase' ? 'text-black' : 'text-gray-500 hover:text-black'}`}
             >
               Recursos de Clase
               {activeTab === 'clase' && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00C8F2]" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: "#FCA311" }} />
               )}
             </button>
             <button 
               onClick={() => setActiveTab("preguntas")}
-              className={`pb-3 text-sm font-medium transition-colors relative ${activeTab === 'preguntas' ? 'text-white' : 'text-gray-500 hover:text-gray-300'}`}
+              className={`pb-3 text-sm font-medium transition-colors relative ${activeTab === 'preguntas' ? 'text-black' : 'text-gray-500 hover:text-black'}`}
             >
               Preguntas (3)
               {activeTab === 'preguntas' && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#00C8F2]" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5" style={{ backgroundColor: "#FCA311" }} />
               )}
             </button>
           </div>
@@ -139,24 +139,24 @@ export default function LiaterDemoModal({ isOpen, onClose }) {
                   { icon: "📊", title: "Dataset_Entrenamiento.csv", size: "12.5 MB" },
                   { icon: "💻", title: "Script_Python_Modelo.py", size: "15 KB" },
                 ].map((file, i) => (
-                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer">
+                  <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-white/60 border border-white border-b-gray-200 hover:bg-white transition-colors cursor-pointer shadow-sm hover:-translate-y-0.5">
                     <div className="text-2xl">{file.icon}</div>
                     <div>
-                      <p className="text-sm font-medium text-white">{file.title}</p>
-                      <p className="text-xs text-gray-500">{file.size}</p>
+                      <p className="text-sm font-semibold" style={{ color: "#1a1a1a" }}>{file.title}</p>
+                      <p className="text-xs" style={{ color: "#9ca3af" }}>{file.size}</p>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/5">
+                <div className="p-4 rounded-xl bg-white border border-gray-200 shadow-sm">
                   <div className="flex items-center gap-2 mb-2">
-                    <div className="w-6 h-6 rounded-full bg-purple-500/30 flex items-center justify-center text-xs text-purple-300">A</div>
-                    <span className="text-sm text-gray-300 font-medium">Ana Gómez</span>
-                    <span className="text-xs text-gray-500 ml-auto">Hace 2 horas</span>
+                    <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs" style={{ backgroundColor: "#14213D", color: "#FCA311" }}>A</div>
+                    <span className="text-sm font-medium text-black">Ana Gómez</span>
+                    <span className="text-xs ml-auto" style={{ color: "#9ca3af" }}>Hace 2 horas</span>
                   </div>
-                  <p className="text-sm text-gray-400">¿Cuál es la función de activación recomendada para la última capa en clasificación multiclase?</p>
+                  <p className="text-sm" style={{ color: "#1a1a1a" }}>¿Cuál es la función de activación recomendada para la última capa en clasificación multiclase?</p>
                 </div>
               </div>
             )}
