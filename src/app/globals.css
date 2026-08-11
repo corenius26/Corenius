@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #060913;
+  --background: #050d1a;
   --foreground: #ffffff;
-  --color-blue-deep: #0047AB;
-  --color-blue-sapphire: #0F52BA;
-  --color-cyan-cerulean: #0090BC;
-  --color-cyan-electric: #00FFFF;
+  --color-blue-electric: #0066FF;
+  --color-blue-deep: #0A2540;
+  --color-blue-cyan: #00C2FF;
+  --color-dark-gray: #1A1A1A;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-blue-electric: var(--color-blue-electric);
   --color-blue-deep: var(--color-blue-deep);
-  --color-blue-sapphire: var(--color-blue-sapphire);
-  --color-cyan-cerulean: var(--color-cyan-cerulean);
-  --color-cyan-electric: var(--color-cyan-electric);
+  --color-blue-cyan: var(--color-blue-cyan);
+  --color-dark-gray: var(--color-dark-gray);
   --font-sans: var(--font-plus-jakarta);
   --font-heading: var(--font-space-grotesk);
   --font-mono: var(--font-jetbrains);
@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  background: radial-gradient(circle at 50% 0%, #0c152e 0%, #060913 70%);
+  background: radial-gradient(circle at 50% -10%, #0A2540 0%, #050d1a 65%, #02060c 100%);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), sans-serif;
   overflow-x: hidden;
@@ -36,31 +36,41 @@ body {
 
 /* Corenius Glassmorphism */
 .glass {
-  background: rgba(15, 82, 186, 0.05);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 255, 255, 0.12);
-  box-shadow: 0 8px 32px 0 rgba(0, 71, 171, 0.2);
+  background: rgba(10, 37, 64, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 194, 255, 0.15);
+  box-shadow: 0 12px 40px 0 rgba(0, 102, 255, 0.12);
 }
 
 .glass-nav {
-  background: rgba(6, 9, 19, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+  background: rgba(5, 13, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 194, 255, 0.12);
 }
 
 /* Gradient text utilities */
 .gradient-corenius {
-  background: linear-gradient(135deg, #00FFFF 0%, #0090BC 40%, #0F52BA 80%, #0047AB 100%);
+  background: linear-gradient(135deg, #00C2FF 0%, #0066FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-corenius-full {
+  background: linear-gradient(135deg, #00C2FF 0%, #0066FF 50%, #0A2540 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .glow-cyan {
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.35);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.35);
 }
 
 .glow-text-cyan {
-  text-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
+  text-shadow: 0 0 18px rgba(0, 194, 255, 0.5);
 }

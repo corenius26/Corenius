@@ -1,5 +1,6 @@
 import HeroViewWrapper from "@/components/canvas/HeroViewWrapper";
 import Navbar from "@/components/Navbar";
+import CoreniusLogo from "@/components/CoreniusLogo";
 import Link from "next/link";
 
 export default function Home() {
@@ -19,10 +20,10 @@ export default function Home() {
           {/* Sección 1: Hero */}
           <div className="h-screen flex items-center justify-start px-8 md:px-16 lg:px-32">
             <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass mb-6 border border-cyan-400/20">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-xs uppercase tracking-[0.25em] text-cyan-300 font-semibold">
-                  Innovación con Propósito
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glass mb-6 border border-cyan-400/25">
+                <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
+                <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+                  Transformación Digital
                 </span>
               </div>
 
@@ -34,16 +35,25 @@ export default function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl font-light leading-relaxed">
-                Diseñamos y construimos sistemas de alta precisión donde la inteligencia artificial se fusiona con el software y el mundo físico.
+                Diseñamos y construimos sistemas inteligentes de alta precisión donde los datos, la inteligencia artificial y la ingeniería física convergen.
               </p>
+
+              {/* Pilares de Marca */}
+              <div className="flex items-center gap-3 text-xs font-mono text-cyan-300/80 mb-8 tracking-widest uppercase">
+                <span>Innovación</span>
+                <span className="text-blue-500">•</span>
+                <span>Inteligencia</span>
+                <span className="text-blue-500">•</span>
+                <span>Crecimiento</span>
+              </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="#proyectos"
-                  className="px-8 py-3.5 rounded-full text-sm font-bold tracking-wide text-black transition-all duration-300 hover:scale-105"
+                  className="px-8 py-3.5 rounded-full text-sm font-bold tracking-wide text-white transition-all duration-300 hover:scale-105"
                   style={{
-                    background: "linear-gradient(135deg, #00FFFF 0%, #0090BC 60%, #0F52BA 100%)",
-                    boxShadow: "0 0 25px rgba(0, 255, 255, 0.35)",
+                    background: "linear-gradient(135deg, #00C2FF 0%, #0066FF 100%)",
+                    boxShadow: "0 0 30px rgba(0, 102, 255, 0.45)",
                   }}
                 >
                   Explorar Proyectos
@@ -61,7 +71,7 @@ export default function Home() {
           {/* Sección 2: Cerebro y Máquina */}
           <div id="servicios" className="h-screen flex items-center justify-end px-8 md:px-16 lg:px-32">
             <div className="max-w-lg text-right">
-              <span className="text-xs uppercase tracking-[0.3em] text-cyan-400 font-semibold">
+              <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
                 Sincronización Total
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
@@ -76,7 +86,7 @@ export default function Home() {
           {/* Sección 3: Ingeniería Transparente */}
           <div className="h-screen flex items-center justify-start px-8 md:px-16 lg:px-32">
             <div className="max-w-lg">
-              <span className="text-xs uppercase tracking-[0.3em] text-cyan-400 font-semibold">
+              <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
                 Arquitectura Robusta
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
@@ -106,14 +116,14 @@ export default function Home() {
       {/* ── Sección de Proyectos ──────────────────────────────────────────────── */}
       <section id="proyectos" className="relative z-10 py-32 px-8 md:px-16 lg:px-32 border-t border-cyan-500/10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-cyan-400 font-semibold">
+          <span className="text-xs uppercase tracking-[0.3em] text-[#00C2FF] font-semibold">
             Portafolio de Innovación
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4">
             Proyectos Destacados
           </h2>
           <p className="text-gray-400 text-lg">
-            Sistemas inteligentes, plataformas digitales e ingeniería mecatrónica desarrollada con propósito.
+            Sistemas inteligentes, plataformas digitales e ingeniería mecatrónica desarrollada para la transformación digital.
           </p>
         </div>
 
@@ -122,28 +132,28 @@ export default function Home() {
             {
               title: "Visión Artificial & Robótica",
               tag: "Computer Vision · Edge AI",
-              desc: "Inspección autónoma y clasificación en tiempo real con modelos de redes convolucionales.",
+              desc: "Inspección autónoma y clasificación en tiempo real con modelos de redes neuronales convolucionales.",
             },
             {
               title: "Automatización & Telemetría IoT",
               tag: "Mecatrónica · Supabase",
-              desc: "Monitoreo predictivo y control distribuido de actuadores con sincronización cloud.",
+              desc: "Monitoreo predictivo y control distribuido de actuadores con sincronización cloud en tiempo real.",
             },
             {
               title: "Plataformas SaaS de Alto Rendimiento",
               tag: "Fullstack · IA Generativa",
-              desc: "Arquitecturas cloud escalables con pipelines inteligentes de procesamiento de datos.",
+              desc: "Arquitecturas cloud escalables con pipelines inteligentes y microservicios de alto desempeño.",
             },
           ].map((item) => (
             <div
               key={item.title}
-              className="h-80 glass rounded-3xl p-7 flex flex-col justify-between hover:bg-cyan-950/20 transition-all duration-300 cursor-pointer border border-cyan-500/20 group hover:border-cyan-400/60 hover:-translate-y-1.5 hover:shadow-[0_0_30px_rgba(0,255,255,0.15)]"
+              className="h-80 glass rounded-3xl p-7 flex flex-col justify-between hover:bg-[#0A2540]/40 transition-all duration-300 cursor-pointer border border-cyan-500/20 group hover:border-[#00C2FF]/70 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(0,194,255,0.2)]"
             >
               <div>
-                <span className="text-[11px] text-cyan-300 font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30">
+                <span className="text-[11px] text-[#00C2FF] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#0A2540]/80 border border-cyan-500/30">
                   {item.tag}
                 </span>
-                <h3 className="text-2xl font-bold mt-5 mb-2 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-2xl font-bold mt-5 mb-2 group-hover:text-[#00C2FF] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-400 leading-relaxed">
@@ -151,7 +161,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex items-center text-sm font-semibold text-cyan-400 group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center text-sm font-semibold text-[#00C2FF] group-hover:translate-x-2 transition-transform">
                 Ver demostración interactiva <span className="ml-1.5">→</span>
               </div>
             </div>
@@ -164,26 +174,19 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           <div>
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <span className="text-2xl font-black tracking-[0.18em] text-white">
-                CORENIUS
-              </span>
-            </div>
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-400 font-semibold">
-              Innovación con Propósito
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              Ingeniería mecatrónica y desarrollo de software con inteligencia artificial.
+            <CoreniusLogo size="large" />
+            <p className="text-sm text-gray-400 mt-4 max-w-md">
+              Ingeniería mecatrónica y desarrollo de software con inteligencia artificial para la transformación digital.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="mailto:contacto@corenius.com"
-              className="px-7 py-3 rounded-full text-xs uppercase font-bold tracking-widest text-black transition-all hover:scale-105"
+              className="px-8 py-3.5 rounded-full text-xs uppercase font-bold tracking-widest text-white transition-all hover:scale-105"
               style={{
-                background: "linear-gradient(135deg, #00FFFF 0%, #0090BC 60%, #0F52BA 100%)",
-                boxShadow: "0 0 20px rgba(0, 255, 255, 0.3)",
+                background: "linear-gradient(135deg, #00C2FF 0%, #0066FF 100%)",
+                boxShadow: "0 0 25px rgba(0, 102, 255, 0.4)",
               }}
             >
               Hablemos de tu Proyecto
@@ -192,12 +195,14 @@ export default function Home() {
 
         </div>
 
-        <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/5 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} Corenius. Todos los derechos reservados.
+        <div className="max-w-6xl mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+          <span>© {new Date().getFullYear()} Corenius. Todos los derechos reservados.</span>
+          <span className="tracking-widest font-mono text-cyan-400/70">
+            INNOVACIÓN · INTELIGENCIA · CRECIMIENTO
+          </span>
         </div>
       </footer>
 
     </div>
   );
 }
-
