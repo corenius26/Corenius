@@ -18,7 +18,7 @@ export default function Model() {
     if (!groupRef.current) return;
 
     // We make sure to find the scroll container that is definitely in the DOM
-    const scrollContainer = document.getElementById("scroll-container");
+    const scrollContainer = document.getElementById("scroll-container") || document.body;
 
     const tl = gsap.timeline({
       scrollTrigger: {

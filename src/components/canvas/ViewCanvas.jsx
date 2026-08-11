@@ -17,12 +17,14 @@ export default function ViewCanvas() {
         pointerEvents: "none",
         zIndex: 30,
       }}
-      camera={{ fov: 40, near: 0.1, far: 100, position: [0, 0, 7.5] }}
+      camera={{ fov: 38, near: 0.1, far: 100, position: [0, 0, 7.5] }}
       dpr={[1, 2]}
       gl={{
         antialias: true,
         alpha: true,
         powerPreference: "high-performance",
+        toneMapping: 4, // THREE.ACESFilmicToneMapping
+        toneMappingExposure: 1.15,
       }}
     >
       <Suspense fallback={null}>

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #071326;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #0f172a;
   --color-brand-blue: #0057FF;
   --color-brand-deep: #071A45;
   --color-brand-tech: #007CFF;
@@ -18,38 +18,36 @@
   --color-brand-tech: var(--color-brand-tech);
   --color-brand-cyan: var(--color-brand-cyan);
   --color-brand-dark: var(--color-brand-dark);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-outfit);
   --font-heading: var(--font-montserrat);
   --font-mono: var(--font-jetbrains);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-montserrat), var(--font-inter), sans-serif;
+  font-family: var(--font-montserrat), var(--font-outfit), sans-serif;
   letter-spacing: -0.02em;
 }
 
 body {
-  background: radial-gradient(circle at 50% -10%, #071A45 0%, #071326 65%, #030a14 100%);
+  background: #ffffff;
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-outfit), sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-/* Corenius Glassmorphism */
+/* Corenius Glassmorphism / Cards (Light) */
 .glass {
-  background: rgba(10, 37, 64, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 194, 255, 0.15);
-  box-shadow: 0 12px 40px 0 rgba(0, 102, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
 }
 
 .glass-nav {
-  background: rgba(5, 13, 26, 0.82);
+  background: rgba(7, 26, 69, 0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 194, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Gradient text utilities */

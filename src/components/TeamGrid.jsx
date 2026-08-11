@@ -13,14 +13,14 @@ const founders = [
     gradientFrom: "#0057FF",
     gradientVia: "#007CFF",
     gradientTo: "#00C8F2",
-    avatarShadow: "rgba(0,87,255,0.4)",
-    borderDefault: "rgba(0,200,242,0.15)",
-    borderHover: "rgba(0,200,242,0.45)",
+    avatarShadow: "rgba(0,0,0,0.08)",
+    borderDefault: "#e2e8f0",
+    borderHover: "rgba(0,87,255,0.35)",
     glowHover:
-      "0 12px 40px rgba(0,87,255,0.12), inset 0 1px 0 rgba(255,255,255,0.08)",
+      "0 16px 36px -6px rgba(0,87,255,0.08)",
     overlayGradient:
-      "linear-gradient(135deg, rgba(0,87,255,0.12) 0%, rgba(0,200,242,0.06) 100%)",
-    ringHover: "rgba(0,200,242,0.5)",
+      "linear-gradient(135deg, rgba(0,87,255,0.03) 0%, rgba(0,200,242,0.02) 100%)",
+    ringHover: "rgba(0,87,255,0.2)",
   },
   {
     id: 2,
@@ -34,14 +34,14 @@ const founders = [
     gradientFrom: "#00C8F2",
     gradientVia: "#007CFF",
     gradientTo: "#0057FF",
-    avatarShadow: "rgba(0,200,242,0.35)",
-    borderDefault: "rgba(0,87,255,0.15)",
-    borderHover: "rgba(0,87,255,0.45)",
+    avatarShadow: "rgba(0,0,0,0.08)",
+    borderDefault: "#e2e8f0",
+    borderHover: "rgba(0,87,255,0.35)",
     glowHover:
-      "0 12px 40px rgba(0,200,242,0.10), inset 0 1px 0 rgba(255,255,255,0.08)",
+      "0 16px 36px -6px rgba(0,87,255,0.08)",
     overlayGradient:
-      "linear-gradient(135deg, rgba(0,200,242,0.08) 0%, rgba(0,87,255,0.08) 100%)",
-    ringHover: "rgba(0,87,255,0.5)",
+      "linear-gradient(135deg, rgba(0,200,242,0.02) 0%, rgba(0,87,255,0.03) 100%)",
+    ringHover: "rgba(0,87,255,0.2)",
   },
 ];
 
@@ -51,9 +51,8 @@ function FounderCard({ founder }) {
       id={`founder-card-${founder.id}`}
       className="group relative rounded-3xl p-8 sm:p-10 flex flex-col transition-all duration-500 cursor-default"
       style={{
-        background: "rgba(255,255,255,0.04)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
+        background: "#ffffff",
+        boxShadow: "0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02)",
         border: `1px solid ${founder.borderDefault}`,
         transition: "transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease",
       }}
@@ -113,7 +112,7 @@ function FounderCard({ founder }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`GitHub de ${founder.name}`}
-              className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              className="w-9 h-9 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-200 hover:text-black transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z" />
@@ -125,23 +124,23 @@ function FounderCard({ founder }) {
 
       {/* Info */}
       <div className="relative z-10 flex-1">
-        <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-[#00C8F2] mb-2">
+        <p className="text-xs uppercase tracking-[0.25em] text-[#0057FF] mb-2 font-bold">
           {founder.role}
         </p>
-        <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
           {founder.name}
         </h3>
-        <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-light">
+        <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
           {founder.bio}
         </p>
       </div>
 
       {/* Skills tags */}
-      <div className="relative z-10 mt-8 pt-6 border-t border-white/5 flex flex-wrap gap-2">
+      <div className="relative z-10 mt-8 pt-6 border-t border-gray-200 flex flex-wrap gap-2">
         {founder.skills.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1 rounded-lg text-[11px] font-mono text-cyan-300/80 bg-white/[0.04] border border-white/[0.06] transition-colors group-hover:border-white/10"
+            className="px-3 py-1 rounded-lg text-[11px] font-mono text-gray-600 font-medium bg-gray-100 border border-gray-200 transition-colors group-hover:border-gray-300"
           >
             {skill}
           </span>

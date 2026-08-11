@@ -2,14 +2,15 @@
 
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { View, Float, ContactShadows } from "@react-three/drei";
+import { View, Float, ContactShadows, Environment } from "@react-three/drei";
 import * as THREE from "three";
 
-// ── Núcleo 3D de Corenius: Isotipo 'C' + Esfera Cuántica + Datos IA ──
+// ── Núcleo 3D de Corenius: Isotipo 'C' + Cyber Core Energético (Colores Oficiales) ──
 function CoreniusCyberCore() {
   const groupRef = useRef();
   const cArcRef = useRef();
   const innerCoreRef = useRef();
+  const coreMeshRef = useRef();
   const dataCubesGroupRef = useRef();
   const ring1Ref = useRef();
   const ring2Ref = useRef();
@@ -25,13 +26,13 @@ function CoreniusCyberCore() {
     { pos: [-1.6, 0.25, 0.02], size: 0.07, color: "#00C8F2" },
   ];
 
-  // Interacción fluida con el cursor del usuario y rotación continua
+  // Rotación e interacción continua con el cursor
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
 
     if (groupRef.current) {
-      const targetRotY = t * 0.45 + state.pointer.x * 0.5;
-      const targetRotX = state.pointer.y * 0.35 + Math.sin(t * 0.8) * 0.05;
+      const targetRotY = t * 0.4 + state.pointer.x * 0.5;
+      const targetRotX = state.pointer.y * 0.35 + Math.sin(t * 0.7) * 0.05;
       groupRef.current.rotation.y = THREE.MathUtils.damp(
         groupRef.current.rotation.y,
         targetRotY,
@@ -50,6 +51,14 @@ function CoreniusCyberCore() {
       innerCoreRef.current.rotation.y = -t * 0.6;
       innerCoreRef.current.rotation.x = t * 0.3;
     }
+
+    if (coreMeshRef.current) {
+      coreMeshRef.current.rotation.y = t * 0.8;
+      coreMeshRef.current.rotation.z = -t * 0.4;
+      const scale = 0.38 + Math.sin(t * 2) * 0.03;
+      coreMeshRef.current.scale.set(scale, scale, scale);
+    }
+
     if (ring1Ref.current) {
       ring1Ref.current.rotation.z = -t * 0.3;
     }
@@ -65,50 +74,51 @@ function CoreniusCyberCore() {
   });
 
   return (
-    <group ref={groupRef} scale={[0.82, 0.82, 0.82]} position={[0, 0, 0]}>
-      {/* ── Iluminación Studio con la Paleta Oficial de Corenius ── */}
+    <group ref={groupRef} scale={[0.85, 0.85, 0.85]} position={[0, 0, 0]}>
+      {/* ── Iluminación Studio ── */}
+      <Environment preset="city" environmentIntensity={0.65} />
       <ambientLight intensity={0.8} />
-      <directionalLight position={[10, 12, 8]} intensity={3.8} color="#00C8F2" />
-      <directionalLight position={[-10, -10, -6]} intensity={3.2} color="#0057FF" />
-      <pointLight position={[0, 0, 3.5]} intensity={2.8} color="#00C8F2" distance={8} />
-      <pointLight position={[0, -2, -2]} intensity={2.0} color="#071A45" distance={8} />
+      <directionalLight position={[8, 10, 8]} intensity={3.0} color="#00C8F2" />
+      <directionalLight position={[-8, -8, -6]} intensity={2.8} color="#0057FF" />
+      <pointLight position={[0, 0, 3.5]} intensity={2.2} color="#00C8F2" distance={8} />
 
-      {/* ── Isotipo 3D: Arco 'C' Principal de Corenius ── */}
+      {/* ── Isotipo 3D: Arco 'C' Principal en Colores Oficiales (Azul Eléctrico & Cian) ── */}
       <group ref={cArcRef} rotation={[0, 0, Math.PI * 0.2]}>
-        {/* Arco exterior principal (Azul Eléctrico #0057FF) */}
+        {/* Arco exterior principal (Azul Eléctrico Vibrante #0057FF) */}
         <mesh rotation={[0, 0, Math.PI * 0.1]}>
-          <torusGeometry args={[1.4, 0.24, 64, 160, Math.PI * 1.55]} />
+          <torusGeometry args={[1.4, 0.24, 128, 256, Math.PI * 1.55]} />
           <meshPhysicalMaterial
             color="#0057FF"
             metalness={0.9}
             roughness={0.12}
             clearcoat={1.0}
-            clearcoatRoughness={0.08}
+            clearcoatRoughness={0.06}
             reflectivity={0.95}
             emissive="#071A45"
             emissiveIntensity={0.4}
           />
         </mesh>
 
-        {/* Cinta interna luminosa (Cian #00C8F2) */}
+        {/* Cinta interna luminosa (Cian Brillante #00C8F2) */}
         <mesh rotation={[0, 0, Math.PI * 0.25]} scale={[0.88, 0.88, 0.88]}>
-          <torusGeometry args={[1.4, 0.12, 48, 140, Math.PI * 1.45]} />
+          <torusGeometry args={[1.4, 0.12, 96, 200, Math.PI * 1.45]} />
           <meshPhysicalMaterial
             color="#00C8F2"
             metalness={0.92}
             roughness={0.08}
             clearcoat={1.0}
-            clearcoatRoughness={0.05}
+            clearcoatRoughness={0.04}
             emissive="#00C8F2"
             emissiveIntensity={0.85}
           />
         </mesh>
       </group>
 
-      {/* ── Núcleo Cuántico Central: Esfera de Cristal Puro ── */}
+      {/* ── Núcleo Cuántico Central (Core Energético de Cristal + Icosaedro Wireframe) ── */}
       <group ref={innerCoreRef}>
+        {/* Cúpula de Cristal Exterior Transparente */}
         <mesh>
-          <sphereGeometry args={[0.58, 64, 64]} />
+          <sphereGeometry args={[0.58, 96, 96]} />
           <meshPhysicalMaterial
             color="#00C8F2"
             metalness={0.15}
@@ -119,10 +129,23 @@ function CoreniusCyberCore() {
             clearcoat={1.0}
             clearcoatRoughness={0.04}
             emissive="#0057FF"
-            emissiveIntensity={0.65}
+            emissiveIntensity={0.5}
           />
         </mesh>
-        <mesh scale={[0.55, 0.55, 0.55]}>
+
+        {/* Core Energético Wireframe Interno (Pulsante) */}
+        <mesh ref={coreMeshRef}>
+          <icosahedronGeometry args={[1, 1]} />
+          <meshStandardMaterial
+            color="#00F0FF"
+            wireframe={true}
+            emissive="#00F0FF"
+            emissiveIntensity={1.2}
+          />
+        </mesh>
+
+        {/* Esfera de Plasma Central */}
+        <mesh scale={[0.3, 0.3, 0.3]}>
           <sphereGeometry args={[0.5, 32, 32]} />
           <meshBasicMaterial color="#00C8F2" />
         </mesh>
@@ -130,7 +153,7 @@ function CoreniusCyberCore() {
 
       {/* ── Anillos de Circuitos Orbitales ── */}
       <mesh ref={ring1Ref} rotation-x={Math.PI / 2.3}>
-        <torusGeometry args={[1.75, 0.016, 24, 160]} />
+        <torusGeometry args={[1.75, 0.015, 32, 200]} />
         <meshPhysicalMaterial
           color="#00C8F2"
           metalness={1.0}
@@ -141,12 +164,12 @@ function CoreniusCyberCore() {
       </mesh>
 
       <mesh ref={ring2Ref} rotation-x={Math.PI / 3.2} rotation-y={Math.PI / 5}>
-        <torusGeometry args={[2.05, 0.01, 24, 160]} />
+        <torusGeometry args={[2.05, 0.01, 32, 200]} />
         <meshPhysicalMaterial
           color="#0057FF"
           transparent
-          opacity={0.45}
-          metalness={0.8}
+          opacity={0.55}
+          metalness={0.85}
           emissive="#0057FF"
           emissiveIntensity={0.5}
         />
@@ -163,14 +186,21 @@ function CoreniusCyberCore() {
               roughness={0.15}
               clearcoat={0.9}
               emissive={cube.color}
-              emissiveIntensity={1.1}
+              emissiveIntensity={0.9}
             />
           </mesh>
         ))}
       </group>
 
       {/* Sombra de contacto suave */}
-      <ContactShadows position={[0, -2.0, 0]} opacity={0.45} scale={7} blur={2.2} far={4} color="#00C8F2" />
+      <ContactShadows
+        position={[0, -1.95, 0]}
+        opacity={0.35}
+        scale={6.5}
+        blur={2.2}
+        far={3.8}
+        color="#0057FF"
+      />
     </group>
   );
 }

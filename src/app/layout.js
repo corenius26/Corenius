@@ -1,6 +1,7 @@
-import { Montserrat, Inter, JetBrains_Mono } from "next/font/google";
+import { Montserrat, Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ViewCanvas from "@/components/canvas/ViewCanvas";
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -8,10 +9,10 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -30,9 +31,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="es"
-      className={`${montserrat.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${montserrat.variable} ${outfit.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="bg-background text-foreground overflow-x-hidden">
+        {/* Fondo interactivo que reacciona con el cursor + punto azul nítido */}
+        <InteractiveBackground />
         <main>
           {children}
           {/* ViewCanvas SIBLING de children */}

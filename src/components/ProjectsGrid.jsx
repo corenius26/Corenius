@@ -35,24 +35,24 @@ export default function ProjectsGrid() {
           <div
             key={item.id}
             onClick={item.onClick}
-            className={`glass rounded-3xl p-10 flex flex-col justify-between transition-all duration-500 border border-cyan-500/10 group hover:border-[#00C8F2]/40 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,200,242,0.12)] ${
-              item.onClick ? "cursor-pointer hover:bg-[#071A45]/40" : "cursor-default"
+            className={`glass rounded-3xl p-10 flex flex-col justify-between transition-all duration-500 border border-slate-200/90 group hover:border-[#0057FF]/35 hover:-translate-y-2 hover:shadow-[0_16px_36px_-6px_rgba(0,87,255,0.08)] ${
+              item.onClick ? "cursor-pointer hover:bg-slate-50/50" : "cursor-default"
             }`}
           >
             <div>
-              <span className="text-[11px] text-[#00C8F2] font-mono uppercase tracking-wider px-3 py-1 rounded-full bg-[#071A45]/80 border border-cyan-500/30">
+              <span className="text-xs text-[#0057FF] font-bold uppercase tracking-[0.2em] px-3.5 py-1 rounded-full bg-[#0057FF]/10 border border-[#0057FF]/20">
                 {item.tag}
               </span>
-              <h3 className="text-2xl font-bold mt-5 mb-3 group-hover:text-[#00C8F2] transition-colors text-white">
+              <h3 className="text-2xl font-bold mt-5 mb-3 group-hover:text-[#0057FF] transition-colors text-slate-900">
                 {item.title}
               </h3>
-              <p className="text-sm text-gray-400 leading-relaxed font-light mb-6">
+              <p className="text-sm text-gray-600 leading-relaxed font-light mb-6">
                 {item.desc}
               </p>
             </div>
 
             {item.onClick && (
-              <div className="flex items-center text-sm font-semibold text-[#00C8F2] group-hover:translate-x-2 transition-transform">
+              <div className="flex items-center text-sm font-semibold text-[#0057FF] group-hover:translate-x-2 transition-transform">
                 Ver demostración interactiva <span className="ml-1.5">→</span>
               </div>
             )}

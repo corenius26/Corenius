@@ -36,10 +36,9 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           <Link
             href="#contacto"
-            className="px-5 py-2.5 rounded-full text-xs uppercase font-bold tracking-widest text-white transition-all duration-300 hover:scale-105"
+            className="px-5 py-2.5 rounded-full text-xs uppercase font-bold tracking-widest text-white transition-all duration-300 hover:scale-105 hover:opacity-95 shadow-sm"
             style={{
-              background: "linear-gradient(135deg, #00C2FF 0%, #0066FF 100%)",
-              boxShadow: "0 0 25px rgba(0, 102, 255, 0.45)",
+              background: "linear-gradient(135deg, #00C8F2 0%, #0066FF 100%)",
             }}
           >
             Iniciar Proyecto
