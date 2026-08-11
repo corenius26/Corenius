@@ -116,6 +116,119 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Sección: Misión & Visión (Propósito & Identidad) ───────────────── */}
+      <section id="nosotros" className="relative z-10 py-32 px-6 sm:px-12 lg:px-24 border-t border-cyan-500/10 bg-gradient-to-b from-transparent via-[#0A2540]/30 to-transparent">
+        <div className="max-w-6xl mx-auto">
+          
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-4 border border-cyan-400/25">
+              <span className="w-2 h-2 rounded-full bg-[#00C2FF] animate-pulse" />
+              <span className="text-[11px] uppercase tracking-[0.28em] text-[#00C2FF] font-semibold">
+                Propósito &amp; Identidad
+              </span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mt-2 mb-4">
+              Impulsando el Futuro de las Organizaciones
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Guiados por la ingeniería de precisión y la inteligencia digital para crear un impacto sostenible y escalable.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+            
+            {/* Tarjeta: Misión */}
+            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-cyan-500/20 hover:border-[#00C2FF]/60 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,194,255,0.18)] hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00C2FF]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#00C2FF]/20 transition-all" />
+              
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#00C2FF]/15 text-[#00C2FF] border border-[#00C2FF]/30">
+                    Misión
+                  </span>
+                  <div className="w-10 h-10 rounded-2xl bg-[#00C2FF]/10 border border-[#00C2FF]/25 flex items-center justify-center text-[#00C2FF] font-bold text-lg group-hover:scale-110 transition-transform">
+                    🎯
+                  </div>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-bold mb-5 text-white group-hover:text-cyan-300 transition-colors">
+                  Soluciones Tecnológicas con Propósito Real
+                </h3>
+
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light mb-8">
+                  En <strong className="font-semibold text-white">Corenius</strong> diseñamos e implementamos soluciones tecnológicas personalizadas que responden a las necesidades reales de cada organización. Integramos software, inteligencia artificial, automatización y tecnologías digitales para transformar procesos, mejorar la toma de decisiones y facilitar el crecimiento sostenible de nuestros clientes.
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/5 flex flex-wrap gap-2 text-xs font-mono text-cyan-300/80">
+                <span className="px-3 py-1 rounded-lg bg-white/5">Personalización</span>
+                <span className="px-3 py-1 rounded-lg bg-white/5">IA &amp; Automatización</span>
+                <span className="px-3 py-1 rounded-lg bg-white/5">Crecimiento Sostenible</span>
+              </div>
+            </div>
+
+            {/* Tarjeta: Visión */}
+            <div className="relative rounded-3xl glass p-8 sm:p-10 flex flex-col justify-between border border-blue-500/20 hover:border-[#0066FF]/70 transition-all duration-300 group hover:shadow-[0_0_40px_rgba(0,102,255,0.22)] hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0066FF]/15 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0066FF]/25 transition-all" />
+
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <span className="px-4 py-1.5 rounded-full text-xs font-mono font-bold tracking-widest uppercase bg-[#0066FF]/20 text-cyan-300 border border-[#0066FF]/40">
+                    Visión
+                  </span>
+                  <div className="w-10 h-10 rounded-2xl bg-[#0066FF]/15 border border-[#0066FF]/35 flex items-center justify-center text-cyan-300 font-bold text-lg group-hover:scale-110 transition-transform">
+                    🚀
+                  </div>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl font-bold mb-5 text-white group-hover:text-blue-300 transition-colors">
+                  Referente Global en Transformación Digital
+                </h3>
+
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light mb-8">
+                  Ser una empresa referente en transformación digital en Colombia y con proyección internacional, reconocida por convertir los desafíos de las organizaciones en soluciones tecnológicas inteligentes, personalizadas y escalables, impulsando una evolución continua de sus procesos y capacidades.
+                </p>
+              </div>
+
+              <div className="pt-6 border-t border-white/5 flex flex-wrap gap-2 text-xs font-mono text-cyan-300/80">
+                <span className="px-3 py-1 rounded-lg bg-white/5">Proyección Internacional</span>
+                <span className="px-3 py-1 rounded-lg bg-white/5">Escalabilidad</span>
+                <span className="px-3 py-1 rounded-lg bg-white/5">Evolución Continua</span>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Pilares Oficiales */}
+          <div className="mt-14 p-6 rounded-2xl glass border border-white/5 flex flex-col md:flex-row items-center justify-around gap-6 text-center">
+            <div className="flex items-center gap-3">
+              <span className="text-xl text-[#00C2FF]">⚡</span>
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 01</p>
+                <p className="text-base font-bold text-white">Innovación Constante</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-10 bg-white/10" />
+            <div className="flex items-center gap-3">
+              <span className="text-xl text-[#00C2FF]">🧠</span>
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 02</p>
+                <p className="text-base font-bold text-white">Inteligencia Aplicada</p>
+              </div>
+            </div>
+            <div className="hidden md:block w-px h-10 bg-white/10" />
+            <div className="flex items-center gap-3">
+              <span className="text-xl text-[#00C2FF]">📈</span>
+              <div className="text-left">
+                <p className="text-xs uppercase tracking-widest text-gray-400 font-mono">Pilar 03</p>
+                <p className="text-base font-bold text-white">Crecimiento Sostenible</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* ── Sección de Proyectos ──────────────────────────────────────────────── */}
       <section id="proyectos" className="relative z-10 py-32 px-8 md:px-16 lg:px-32 border-t border-cyan-500/10">
         <div className="text-center max-w-3xl mx-auto mb-16">

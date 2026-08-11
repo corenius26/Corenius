@@ -21,6 +21,9 @@ export default function Navbar() {
           <Link href="#ia-mecatronica" className="hover:text-cyan-400 transition-colors">
             Mecatrónica & IA
           </Link>
+          <Link href="#nosotros" className="hover:text-cyan-400 transition-colors">
+            Nosotros
+          </Link>
           <Link href="#proyectos" className="hover:text-cyan-400 transition-colors">
             Proyectos
           </Link>
