@@ -25,6 +25,11 @@ export const metadata = {
   title: "Corenius | Transformación Digital",
   description:
     "Tecnología que entiende tu negocio y potencia su crecimiento. Software, inteligencia artificial y automatización a medida.",
+  icons: {
+    icon: "/brand/Corenius_Isotipo_Color.svg",
+    shortcut: "/brand/Corenius_Isotipo_Color.svg",
+    apple: "/brand/Corenius_Isotipo_Color.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
