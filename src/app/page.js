@@ -95,49 +95,59 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
-            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/30 flex items-center justify-center text-2xl mb-6">
-              🤖
+          <div className="glass p-10 rounded-3xl border border-cyan-500/10 hover:border-[#00C8F2]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,200,242,0.08)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/20 flex items-center justify-center mb-8">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8F2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
             </div>
-            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider">
-              Mecatrónica &amp; Edge AI
+            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider font-semibold">
+              Automatización &amp; IA
             </span>
-            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+            <h3 className="text-2xl font-bold mt-3 mb-4 text-white">
               Sincronización Total
             </h3>
-            <p className="text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-sm text-gray-400 leading-relaxed font-light">
               Acoplamos algoritmos de machine learning directamente con actuadores físicos, microcontroladores y sensores en tiempo real para decisiones en microsegundos.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
-            <div className="w-12 h-12 rounded-2xl bg-[#0057FF]/15 border border-[#0057FF]/40 flex items-center justify-center text-2xl mb-6">
-              ⚙️
+          <div className="glass p-10 rounded-3xl border border-cyan-500/10 hover:border-[#0057FF]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,87,255,0.08)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#0057FF]/10 border border-[#0057FF]/20 flex items-center justify-center mb-8">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0057FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
             </div>
-            <span className="text-[11px] font-mono text-cyan-300 uppercase tracking-wider">
+            <span className="text-[11px] font-mono text-[#0057FF] uppercase tracking-wider font-semibold">
               Arquitectura Robusta
             </span>
-            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+            <h3 className="text-2xl font-bold mt-3 mb-4 text-white">
               Ingeniería Transparente
             </h3>
-            <p className="text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-sm text-gray-400 leading-relaxed font-light">
               Desde modelos de visión artificial hasta hardware industrial dedicado. Diseñamos con modularidad estricta y trazabilidad sin cajas negras.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="glass p-8 rounded-3xl border border-cyan-500/20 hover:border-[#00C8F2]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(0,200,242,0.18)]">
-            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/30 flex items-center justify-center text-2xl mb-6">
-              📈
+          <div className="glass p-10 rounded-3xl border border-cyan-500/10 hover:border-[#00C8F2]/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,200,242,0.08)]">
+            <div className="w-12 h-12 rounded-2xl bg-[#00C8F2]/10 border border-[#00C8F2]/20 flex items-center justify-center mb-8">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00C8F2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
             </div>
-            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider">
+            <span className="text-[11px] font-mono text-[#00C8F2] uppercase tracking-wider font-semibold">
               Despliegue &amp; Escala
             </span>
-            <h3 className="text-2xl font-bold mt-2 mb-4 text-white">
+            <h3 className="text-2xl font-bold mt-3 mb-4 text-white">
               Construido para Escalar
             </h3>
-            <p className="text-sm text-gray-300 leading-relaxed font-light">
+            <p className="text-sm text-gray-400 leading-relaxed font-light">
               Llevamos tu visión desde el primer prototipo funcional en laboratorio hasta la producción y operación industrial continua con la máxima confiabilidad.
             </p>
           </div>

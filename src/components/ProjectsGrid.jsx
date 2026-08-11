@@ -35,7 +35,7 @@ export default function ProjectsGrid() {
           <div
             key={item.id}
             onClick={item.onClick}
-            className={`glass rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 border border-cyan-500/20 group hover:border-[#00C8F2]/70 hover:-translate-y-1.5 hover:shadow-[0_0_35px_rgba(0,200,242,0.2)] ${
+            className={`glass rounded-3xl p-10 flex flex-col justify-between transition-all duration-500 border border-cyan-500/10 group hover:border-[#00C8F2]/40 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(0,200,242,0.12)] ${
               item.onClick ? "cursor-pointer hover:bg-[#071A45]/40" : "cursor-default"
             }`}
           >

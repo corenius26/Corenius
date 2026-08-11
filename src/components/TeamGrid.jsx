@@ -17,7 +17,7 @@ const founders = [
     borderDefault: "rgba(0,200,242,0.15)",
     borderHover: "rgba(0,200,242,0.45)",
     glowHover:
-      "0 0 50px rgba(0,87,255,0.18), 0 0 100px rgba(0,87,255,0.08), inset 0 1px 0 rgba(255,255,255,0.08)",
+      "0 12px 40px rgba(0,87,255,0.12), inset 0 1px 0 rgba(255,255,255,0.08)",
     overlayGradient:
       "linear-gradient(135deg, rgba(0,87,255,0.12) 0%, rgba(0,200,242,0.06) 100%)",
     ringHover: "rgba(0,200,242,0.5)",
@@ -38,7 +38,7 @@ const founders = [
     borderDefault: "rgba(0,87,255,0.15)",
     borderHover: "rgba(0,87,255,0.45)",
     glowHover:
-      "0 0 50px rgba(0,200,242,0.15), 0 0 100px rgba(0,200,242,0.07), inset 0 1px 0 rgba(255,255,255,0.08)",
+      "0 12px 40px rgba(0,200,242,0.10), inset 0 1px 0 rgba(255,255,255,0.08)",
     overlayGradient:
       "linear-gradient(135deg, rgba(0,200,242,0.08) 0%, rgba(0,87,255,0.08) 100%)",
     ringHover: "rgba(0,87,255,0.5)",
